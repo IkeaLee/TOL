@@ -87,13 +87,10 @@
     <div class="container">
       <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
         <h2 align="left">欢迎登陆本系统</h2>
-          <h2 align="left">
-  <label>
-            <h5>&nbsp;</h5>
-          </h2>
+          <form name="form1" method="post" action="loginservlet">
           <table width="459" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
-              <td colspan="2">请选择您的身份
+                <td colspan="2">请选择您的身份
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                  &nbsp;&nbsp;&nbsp;&nbsp;
                  &nbsp;&nbsp;&nbsp;&nbsp;
@@ -134,7 +131,7 @@
             </tr>
           </table>
           <p align="left">&nbsp;</p>
-          <p align="left"> <form name="form1" method="post" action="servlet1">
+          <p align="left">
           <p>&nbsp;</p>
             <table align="left" width="200" border="0" cellspacing="0" cellpadding="0">
               <tr>
