@@ -62,7 +62,7 @@ public class UserInfoDao {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 conn = DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
                 conn.setAutoCommit(false);
-                ps = conn.prepareStatement("SELECT FROM student WHERE username=? and password=?");
+                ps = conn.prepareStatement("SELECT * FROM student WHERE username=? and password=?");
                 ps.setString(1,username);
                 ps.setString(2,password);
                 rs = ps.executeQuery();
