@@ -5,6 +5,41 @@ import cn.cabbsir.teacherol.entity.UserInfo;
 import java.sql.*;
 
 public class UserInfoDao {
+    //更改管理员信息
+    public int UpdateAdmin(String username,String password){
+        int ret = 0;
+        Connection conn = null;
+        PreparedStatement ps= null;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            conn.setAutoCommit(false);
+            ps=conn.prepareStatement("UPDATE admin SET password=?,username=? WHERE id=1");
+            ps.setString(1,password);
+            ps.setString(2,username);
+            ret=ps.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                conn.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }finally {
+            try {
+                if(ps!=null)
+                    ps.close();
+                if(conn!=null)
+                    conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return ret;
+    }
     //学生更改学生信息
     public int UpdateStudent(String username,String password,String email,String area,String grade){
         int ret = 0;

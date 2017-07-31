@@ -47,7 +47,8 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
             if(loginUser==0)
                 response.sendRedirect("login.jsp");
             else{
-                request.getRequestDispatcher("myprofileAdmin.html").forward(request,response);
+
+                request.getRequestDispatcher("adminprofile.jsp").forward(request,response);
             }
         }
         else{
