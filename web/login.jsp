@@ -12,7 +12,20 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-
+<script type="application/javascript">
+    function username() {
+        if(document.form1.usr2.value==0){
+            document.getElementById("1").innerHTML="<font color='red'>用户名不能为空</font>";
+            return false;
+        }
+    }
+    function password() {
+        if(document.form1.passwd2.value==0){
+            document.getElementById("2").innerHTML="<font color='red'>密码不能为空</font>";
+            return false;
+        }     
+    }
+</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Welcome logging in</title>
@@ -86,45 +99,56 @@
 <div class="content-area">
     <div class="container">
       <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
-        <h2 align="left">欢迎登陆本系统</h2>
-          <form name="form1" method="post" action="loginservlet">
-          <table width="459" border="0" align="center" cellpadding="0" cellspacing="0">
+        <h2 align="center">欢迎登陆本系统</h2>
+          <form name="form1" method="post" action="loginservlet" onsubmit="password()&&username()">
+          <table width="477" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
-                <td colspan="2">请选择您的身份
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 &nbsp;&nbsp;&nbsp;&nbsp;
-                 &nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="member" value="s" id="member_0">
-学生
-<label>
-  <input type="radio" name="member" value="t" id="member_1">
-  教师</label>
-<label>
-  <input type="radio" name="member" value="a" id="member_2">
-  管理员</label></td>
+                <td>请选择您的身份<br>            </td>
+                <td>
+                  <label>
+                    <input align="left" type="radio" name="member" value="s" id="member_0">
+                  学生</label>
+              
+                  
+                    
+                    <label>
+                      <input type="radio" name="member" value="t" id="member_1">
+                      教师</label>
+                  
+                 
+                    
+                    <label> 
+                      <input type="radio" name="member" value="a" id="member_2">
+                      管理员</label>
+                    
+                </td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
+              <td>&nbsp;</td>
             </tr>
             <tr>
-              <td width="168">用户名</td>
-              <td width="291">&nbsp;<input type="text" style="color:#000" name="usr2" id="usr"></td>
+              <td width="141">用户名</td>
+              <td width="190"><input type="text" style="color:#000" name="usr2" id="usr" onBlur="username()"></td>
+              <td width="138"><span id="1"></span></td>\<td width="8"></td>
             </tr>
             <tr>
+              <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td><label for="usr">&nbsp; </label></td>
             </tr>
             <tr>
               <td>密码</td>
-              <td><label for="passwd2"></label>
-                <input type="password" style="color:#000" name="passwd2" id="passwd2"></td>
+              <td><input type="password" style="color:#000" name="passwd2" id="passwd" onBlur="password()"></td>
+              <td><label for="passwd"><span id="2"></span></label></td>
             </tr>
             <tr>
-              <td colspan="2">&nbsp;                
+              <td colspan="3">&nbsp;                
             </tr>
             <tr>
-              <td colspan="2"><div align="right">&nbsp;</div>
+              <td colspan="3"><div align="right">&nbsp;</div>
                 <div align="center">
                   <input align="left" type="submit" style="color: black">
                 </div>
