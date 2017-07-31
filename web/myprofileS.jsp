@@ -98,7 +98,7 @@
                 <div class="page-header">
                     <h1>我的个人信息 <small>修改个人信息</small></h1>
                 </div>
-                <form class="form-horizontal" action="UpdateSServlet">
+                <form method="post" class="form-horizontal" action="UpdateSServlet">
                     <fieldset>
                         <div class="control-group">
                             <%
@@ -135,20 +135,21 @@
                             <label class="control-label" >用户名</label>
                             <div class="controls">
                                 <span STYLE="color: #00AEEF">${username}</span>
+                                <input value="${username}" name="usr" type="hidden">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="email">电子邮件</label>
                             <div class="controls">
                                 <span style="color: #00AEEF">${email}</span><br>
-                                <input type="text" class="input-xlarge" id="email" value="请输入新的邮箱地址" />
+                                <input type="text" class="input-xlarge" id="email" value="请输入新的邮箱地址" name="email"/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="password">密码</label>
                             <div class="controls">
                                 <span STYLE="color: #00AEEF">${password}</span><br>
-                                <input type="text" class="input-xlarge" id="password" value="请输入新的密码" />
+                                <input type="text" class="input-xlarge" id="password" value="请输入新的密码" name="password"/>
                             </div>
                         </div>
                         <div class="control-group">
@@ -184,21 +185,21 @@
                             <label class="control-label" >年级</label>
                             <div class="controls"><span style="color: #00AEEF;">${grade}</span> </div>
                             <div class="controls">
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
+                                <select name="grade">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofile.html">取消</a>
+                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofileS.jsp">取消</a><a class="btn" href="indexL.jsp">返回</a>
                         </div>
                     </fieldset>
                 </form>

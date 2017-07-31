@@ -98,7 +98,7 @@
                 <div class="page-header">
                     <h1>我的个人信息 <small>修改个人信息</small></h1>
                 </div>
-                <form class="form-horizontal" action="UpdateTServlet">
+                <form class="form-horizontal" action="UpdateTServlet" method="post">
                     <fieldset>
                         <div class="control-group">
                             <%
@@ -138,20 +138,21 @@
                             <label class="control-label" >用户名</label>
                             <div class="controls">
                                 <span STYLE="color: #00AEEF">${username}</span>
+                            <input value="${username}" name="usr" type="hidden">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="email">电子邮件</label>
                             <div class="controls">
                                 <span style="color: #00AEEF">${email}</span><br>
-                                <input type="text" class="input-xlarge" id="email" value="请输入新的邮箱地址" />
+                                <input type="text" class="input-xlarge" id="email" name="email" value="请输入新的邮箱地址" />
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="password">密码</label>
                             <div class="controls">
                                 <span STYLE="color: #00AEEF">${password}</span><br>
-                                <input type="text" class="input-xlarge" id="password" value="请输入新的密码" />
+                                <input type="text" class="input-xlarge" name="password" id="password" value="请输入新的密码" />
                             </div>
                         </div>
                         <div class="control-group">
@@ -183,13 +184,13 @@
                             </span>
                             </div>
                             <div class="controls">
-                                <select>
-                                    <option>数学</option>
-                                    <option>语文</option>
-                                    <option>英语</option>
-                                    <option>物理</option>
-                                    <option>化学</option>
-                                    <option>生物</option>
+                                <select name="subject">
+                                    <option value="math">数学</option>
+                                    <option value="chinese">语文</option>
+                                    <option value="english">英语</option>
+                                    <option value="physics">物理</option>
+                                    <option value="chemistory">化学</option>
+                                    <option value="biology">生物</option>
                                   
                                 </select>
                             </div>
@@ -206,11 +207,11 @@
                             <label class="control-label" >教龄</label>
                             <div class="controls"><span style="color: #00AEEF;">${teachingAge}</span> </div>
                             <div class="controls">
-                               <input value = "请输入1-40数字">
+                               <input name="age" value = "请输入1-40数字">
                             </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofile.html">取消</a>
+                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofile.html">取消</a><a class="btn" href="indexTeacher.jsp">返回</a>
                         </div>
                     </fieldset>
                 </form>

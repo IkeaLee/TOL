@@ -6,11 +6,10 @@ import java.sql.*;
 
 public class UserInfoDao {
     //学生更改学生信息
-    public int UpdataTeacher(String username,String password,String email,String area,String grade){
+    public int UpdateStudent(String username,String password,String email,String area,String grade){
         int ret = 0;
         Connection conn = null;
         PreparedStatement ps= null;
-        ResultSet rs = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
@@ -22,7 +21,6 @@ public class UserInfoDao {
             ps.setString(4,grade);
             ps.setString(5,username);
             ret=ps.executeUpdate();
-            conn.commit();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -46,11 +44,10 @@ public class UserInfoDao {
         return ret;
     }
     //教师更改教师信息
-    public int UpdataStudent(String username,String password,String email,String area,String teachingAge,String teachingArea){
+    public int UpdateTeacher(String username,String password,String email,String area,String teachingAge,String teachingArea){
         int ret = 0;
         Connection conn = null;
         PreparedStatement ps= null;
-        ResultSet rs = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
