@@ -45,7 +45,7 @@ public class UserInfoDao {
             conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
             //关闭自动提交
             conn.setAutoCommit(false);
-            ps=conn.prepareStatement("INSERT INTO teacher(id,username,password,email,teachingage,teachingarea,area) VALUES (seq_student.nextval,?,?,?,?,?,?)");
+            ps=conn.prepareStatement("INSERT INTO teacher(id,username,password,email,teachingage,teachingarea,area) VALUES (seq_teacher.nextval,?,?,?,?,?,?)");
             ps.setString(1,username);
             ps.setString(2,password);
             ps.setString(3,email);
