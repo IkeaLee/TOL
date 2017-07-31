@@ -174,7 +174,7 @@
             <form onsubmit="passwd2()&&passwd1()&&setEmail()&&grade()&&username()" name="form2" method="post" action="registerSServlet">
                 <table align="center" width="489" border="0" cellpadding="5" cellspacing="2">
                     <tr>
-                        <td width="125"><div align="left">用户名  </div></td>
+                        <td width="125"><div align="left">用户名(无法更改)</div></td>
                         <td width="178"><div align="right">
                             <input name="usr" type="text" id="usr4" style="color:#000" onBlur="username()" size="30">
                         </div></td>

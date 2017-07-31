@@ -174,7 +174,7 @@
             <form name="form1" method="post" action="registerTServlet">
                 <table align="center" width="570" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td width="208"><div align="left">用户名</div></td>
+                        <td width="208"><div align="left">用户名(无法更改)</div></td>
                         <td colspan="2"><div align="right">
                             <input name="usr" type="text" id="usr4" style="color:#000" onblur="setUsername()" size="30">
                         </div></td>

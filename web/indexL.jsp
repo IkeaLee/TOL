@@ -77,7 +77,7 @@
                     }
                 %>
                 欢迎您，<span style="color: #00ADEF">${username}</span> 同学
-                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="adminS.html" style="color: #d9edf7">个人中心</a></button>
+                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileS.jsp" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="index.html">首页</a></li>
