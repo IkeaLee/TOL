@@ -40,7 +40,7 @@
             }
         }
     </script>
-    <meta charset="utf-8">
+        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>我的信息</title>
     <meta name="description" content="Easy to ask question to teacher">
@@ -98,7 +98,7 @@
                 <div class="page-header">
                     <h1>我的个人信息 <small>修改个人信息</small></h1>
                 </div>
-                <form class="form-horizontal" action="UpdateTServlet">
+                <form class="form-horizontal" action="UpdateSServlet">
                     <fieldset>
                         <div class="control-group">
                             <%
@@ -108,31 +108,28 @@
                                 String password = null;
                                 int score = 0;
                                 String area = null;
-                                int teachingAge = 0;
+                                int grade = 0;
                                 String weizhi;
                                 String []g=null;
-                                String teachingArea = null;
                                 int x,y;
                                 if(user!=null){
                                     username = user.getUsername();
-                                    teachingArea = user.getTeachingArea();
                                     email = user.getEmail();
                                     password = user.getPassword();
                                     score = user.getScore();
-                                    teachingAge = user.getGrade();
+                                    grade = user.getGrade();
                                     area= user.getArea();
                                     g=area.split(",");
                                     x=Integer.parseInt(g[0]);
                                     y=Integer.parseInt(g[1]);
                                     AreaInfo ai = new AreaInfo();
                                     weizhi = ai.Judgement(x,y);
-                                    pageContext.setAttribute("teachingArea",teachingArea);
                                     pageContext.setAttribute("area", weizhi);
                                     pageContext.setAttribute("username",username);
                                     pageContext.setAttribute("email",email);
                                     pageContext.setAttribute("password",password);
                                     pageContext.setAttribute("score",score);
-                                    pageContext.setAttribute("teachingAge",teachingAge);
+                                    pageContext.setAttribute("grade",grade);
                                 }
                             %>
                             <label class="control-label" >用户名</label>
@@ -176,25 +173,6 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" >教学学科</label>
-                            <div class="controls">
-							<span id="teachingArea" style="color: #00AEEF">
-                                ${teachingArea}
-                            </span>
-                            </div>
-                            <div class="controls">
-                                <select>
-                                    <option>数学</option>
-                                    <option>语文</option>
-                                    <option>英语</option>
-                                    <option>物理</option>
-                                    <option>化学</option>
-                                    <option>生物</option>
-                                  
-                                </select>
-                            </div>
-                        </div>
-                        <div class="control-group">
                             <label class="control-label" >积分</label>
                             <div class="controls">
 							<span id="score" style="color: #00AEEF">
@@ -203,10 +181,20 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" >教龄</label>
-                            <div class="controls"><span style="color: #00AEEF;">${teachingAge}</span> </div>
+                            <label class="control-label" >年级</label>
+                            <div class="controls"><span style="color: #00AEEF;">${grade}</span> </div>
                             <div class="controls">
-                               <input value = "请输入1-40数字">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-actions">

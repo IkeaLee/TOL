@@ -5,6 +5,87 @@ import cn.cabbsir.teacherol.entity.UserInfo;
 import java.sql.*;
 
 public class UserInfoDao {
+    //学生更改学生信息
+    public int UpdataTeacher(String username,String password,String email,String area,String grade){
+        int ret = 0;
+        Connection conn = null;
+        PreparedStatement ps= null;
+        ResultSet rs = null;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            conn.setAutoCommit(false);
+            ps=conn.prepareStatement("UPDATE student SET password=?,email=?,area=?,grade=? WHERE username=?");
+            ps.setString(1,password);
+            ps.setString(2,email);
+            ps.setString(3,area);
+            ps.setString(4,grade);
+            ps.setString(5,username);
+            ret=ps.executeUpdate();
+            conn.commit();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                conn.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }finally {
+            try {
+                if(ps!=null)
+                    ps.close();
+                if(conn!=null)
+                    conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return ret;
+    }
+    //教师更改教师信息
+    public int UpdataStudent(String username,String password,String email,String area,String teachingAge,String teachingArea){
+        int ret = 0;
+        Connection conn = null;
+        PreparedStatement ps= null;
+        ResultSet rs = null;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            conn.setAutoCommit(false);
+            ps=conn.prepareStatement("UPDATE teacher SET password=?,email=?,area=?,teachingAge=?,teachingArea=? WHERE username=?");
+            ps.setString(1,password);
+            ps.setString(2,email);
+            ps.setString(3,area);
+            ps.setString(4,teachingAge);
+            ps.setString(5,teachingArea);
+            ps.setString(6,username);
+            ret=ps.executeUpdate();
+            conn.commit();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                conn.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }finally {
+            try {
+                if(ps!=null)
+                    ps.close();
+                if(conn!=null)
+                    conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return ret;
+    }
     //判断注册用户名是否重复
     public int judgeUserName(String name){
         int ret=0;
@@ -13,6 +94,7 @@ public class UserInfoDao {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            conn.setAutoCommit(false);
             ps=conn.prepareStatement("select * from student where username=?");
             ps.setString(1,name);
             ret=ps.executeUpdate();
