@@ -23,7 +23,7 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
             else{
                 HttpSession session = request.getSession();
                 session.setAttribute("loginuser",loginUser);
-                request.getRequestDispatcher("indexL.html").forward(request,response);
+                request.getRequestDispatcher("indexL.jsp").forward(request,response);
             }
         }
         else if(identify.equals("t")){

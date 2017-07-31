@@ -9,7 +9,6 @@ public class UserInfo {
     private String area;
     private int subTimes;
     private int signTimes;
-    private String vip;
     private int score;
     private int finishTimes;
     private String teachingArea;
@@ -77,14 +76,6 @@ public class UserInfo {
 
     public void setSignTimes(int signTimes) {
         this.signTimes = signTimes;
-    }
-
-    public String getVip() {
-        return vip;
-    }
-
-    public void setVip(String vip) {
-        this.vip = vip;
     }
 
     public int getScore() {

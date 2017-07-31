@@ -1,4 +1,4 @@
-<%--
+<%@ page import="cn.cabbsir.teacherol.logic.UserInfoDao" %><%--
   Created by IntelliJ IDEA.
   User: CabbS
   Date: 2017/7/28
@@ -49,7 +49,7 @@
                 return false;
             }
             else{
-                document.getElementById("username").innerHTML="<font color='#ffffe0'>✔</font>";
+                document.getElementById("username").innerHTML="<font color='#7cfc00'>✔</font>";
                 return true;
             }
         }
@@ -59,13 +59,13 @@
                 return false;
             }
             else{
-                document.getElementById("passwd1").innerHTML="<font color='#ffffe0'>✔<font/>";
+                document.getElementById("passwd1").innerHTML="<font color='#7cfc00'>✔<font/>";
                 return true;
             }
         }
         function passwd2(){
             if(document.form2.passwd.value==document.form2.againpasswd.value&&document.form2.againpasswd.value!="") {
-                document.getElementById("passwd2").innerHTML = "<font color='#ffffe0'>✔<font/>";
+                document.getElementById("passwd2").innerHTML = "<font color='#7cfc00'>✔<font/>";
                 return true;
             }
             else{
@@ -80,7 +80,7 @@
                 return false;
             }
             else{
-                document.getElementById("mail").innerHTML="<font color='#ffffe0'>✔</font>";
+                document.getElementById("mail").innerHTML="<font color='#7cfc00'>✔</font>";
                 return true;
             }
         }
@@ -90,7 +90,7 @@
                 return false;
             }
             else{
-                document.getElementById("grade1").innerHTML="<font color='#ffffe0'>✔</font>";
+                document.getElementById("grade1").innerHTML="<font color='#7cfc00'>✔</font>";
                 return true;
             }
         }
@@ -171,7 +171,7 @@
         <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
             <h2 align="center">学生注册</h2>
             <p align="left">&nbsp;</p>
-            <form onsubmit="passwd2()&&passwd1()&&setEmail()&&grade()&&username()" name="form2" method="post" action="">
+            <form onsubmit="passwd2()&&passwd1()&&setEmail()&&grade()&&username()" name="form2" method="post" action="registerSServlet">
                 <table align="center" width="489" border="0" cellpadding="5" cellspacing="2">
                     <tr>
                         <td width="125"><div align="left">用户名  </div></td>
@@ -238,7 +238,7 @@
                         <td><div align="left">居住地</div></td>
                         <td><div align="right">
                             <select name="province" id="pro" style="color: #5e5e5e" onchange="chooseAera()">
-                                <option>保密</option>
+                                <option >保密</option>
                                 <script type="text/javascript">
                                     var pro = document.getElementById("pro");
                                     pro.length = 0;
@@ -248,10 +248,10 @@
                                 </script>
                             </select>
                             <select id="city" name="citys" style="color: #5e5e5e">
-                              <option>保密</option>
+                              <option >保密</option>
                           </select>
                       </div></td>
-                        <td>选择您的长居地</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td colspan="3"> <div align="right">&nbsp;</div>

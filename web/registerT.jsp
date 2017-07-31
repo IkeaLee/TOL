@@ -48,7 +48,7 @@
                 return false;
             }
             else{
-                document.getElementById("username").innerHTML="<font color='#ffffe0'>✔</font>";
+                document.getElementById("username").innerHTML="<font color='#7cfc00'>✔</font>";
                 return true;
             }
         }
@@ -58,13 +58,13 @@
                 return false;
             }
             else{
-                document.getElementById("passwd1").innerHTML="<font color='#ffffe0'>✔<font/>";
+                document.getElementById("passwd1").innerHTML="<font color='#7cfc00'>✔<font/>";
                 return true;
             }
         }
         function setPassword2(){
             if(document.form1.passwd.value==document.form1.againpasswd.value&&document.form1.againpasswd.value!="") {
-                document.getElementById("passwd2").innerHTML = "<font color='#ffffe0'>✔<font/>";
+                document.getElementById("passwd2").innerHTML = "<font color='#7cfc00'>✔<font/>";
                 return true;
             }
             else{
@@ -79,7 +79,7 @@
                 return false;
             }
             else{
-                document.getElementById("mail").innerHTML="<font color='#ffffe0'>✔</font>";
+                document.getElementById("mail").innerHTML="<font color='#7cfc00'>✔</font>";
                 return true;
             }
         }
@@ -89,7 +89,7 @@
                 return false;
             }
             else{
-                document.getElementById("age1").innerHTML="<font color='#ffffe0'>✔</font>";
+                document.getElementById("age1").innerHTML="<font color='#7cfc00'>✔</font>";
                 return true;
             }
         }
@@ -171,7 +171,7 @@
         <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
             <h2 align="center">教师注册</h2>
             <p align="left">&nbsp;</p>
-            <form name="form1" method="post" action="">
+            <form name="form1" method="post" action="registerTServlet">
                 <table align="center" width="570" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td width="208"><div align="left">用户名</div></td>
@@ -237,13 +237,13 @@
                     <tr>
                         <td><div align="left">指导学科</div></td>
                         <td><div align="center">
-                             <select align="right" name="select2" class="bounceIn" style="color: #4E4E4E">
-                                <option>数学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <option>语文&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <option>英语&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <option>物理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <option>化学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                <option>生物&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                             <select align="right" name="teachingArea" class="bounceIn" style="color: #4E4E4E">
+                                <option value="math">数学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                <option value="chinese">语文&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                <option value="english">英语&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                <option value="physical">物理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                <option value="chemistry">化学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                <option value="biological">生物&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
                             </select>
                         </div></td>
                         <td>&nbsp;</td>
