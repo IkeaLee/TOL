@@ -3,3 +3,5 @@
 >powered by : Sandman CabbSir GeorgeChen7
 ### version1.0 
 前段框架基本完成，页面逻辑不清晰，后台代码未添加。
+### version2.0
+登陆注册完成，后台管理信息增加，页面逻辑整理部分
