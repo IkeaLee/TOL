@@ -3,8 +3,181 @@ package cn.cabbsir.teacherol.logic;
 import cn.cabbsir.teacherol.entity.UserInfo;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UserInfoDao {
+    //管理员姓名查找教师
+    public UserInfo SelectTName(String name){
+        UserInfo user=null;
+        //JDBC
+        Connection conn=null;
+        PreparedStatement st=null;
+        ResultSet rs = null;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            //为了减少编译次数，要将变量换为?
+            st=conn.prepareStatement("select username,password,email,area,teachingarea,teachingage from teacher WHERE userrname LIKE ?");
+            //SetType(No.,Values);
+            st.setString(1,"%"+name+"%");
+            //执行sql语句
+            rs=st.executeQuery();
+            if(rs.next()){
+                user=new UserInfo();
+                user.setTeachingAge(rs.getInt("teachingage"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                user.setArea(rs.getString("area"));
+                user.setTeachingArea(rs.getString("teachingarea"));
+            }
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            try {
+                if(rs!=null)
+                    st.close();
+                if(st!=null)
+                    st.close();
+                if(conn!=null)
+                    conn.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+        return user;
+    }
+    //管理员姓名查找学生
+    public UserInfo SelectSName(String name){
+        UserInfo user=null;
+        //JDBC
+        Connection conn=null;
+        PreparedStatement st=null;
+        ResultSet rs = null;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            //为了减少编译次数，要将变量换为?
+            st=conn.prepareStatement("select username,password,email,area,grade from student WHERE username LIKE ?");
+            //SetType(No.,Values);
+            st.setString(1,"%"+name+"%");
+            //执行sql语句
+            rs=st.executeQuery();
+            if(rs.next()){
+                user=new UserInfo();
+                user.setGrade(rs.getInt("grade"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                user.setArea(rs.getString("area"));
+            }
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            try {
+                if(rs!=null)
+                    st.close();
+                if(st!=null)
+                    st.close();
+                if(conn!=null)
+                    conn.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        }
+        return user;
+
+    }
+    //管理员查询所有教师
+    public ArrayList<UserInfo> SelectTAll(){
+        ArrayList<UserInfo> users=new ArrayList<UserInfo>();
+        Connection conn=null;
+        Statement st=null;
+        ResultSet rs=null;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            st=conn.createStatement();
+            rs=st.executeQuery("select username,password,email,area,teachingAge,teachingarea from teacher");
+            while(rs.next()){
+                UserInfo user=new UserInfo();
+                user.setTeachingArea(rs.getString("teachingarea"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                user.setArea(rs.getString("area"));
+                user.setTeachingAge(rs.getInt("teachingage"));
+                users.add(user);
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(st!=null)
+                    st.close();
+                if(conn!=null)
+                    conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return users;
+    }
+    //管理员查询所有学生
+    public ArrayList<UserInfo> SelectSAll(){
+        ArrayList<UserInfo> users=new ArrayList<UserInfo>();
+        Connection conn=null;
+        Statement st=null;
+        ResultSet rs=null;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
+            st=conn.createStatement();
+            rs=st.executeQuery("select username,password,email,grade from student");
+            while(rs.next()){
+                UserInfo user=new UserInfo();
+                user.setGrade(rs.getInt("grade"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                users.add(user);
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(st!=null)
+                    st.close();
+                if(conn!=null)
+                    conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return users;
+    }
     //更改管理员信息
     public int UpdateAdmin(String username,String password){
         int ret = 0;

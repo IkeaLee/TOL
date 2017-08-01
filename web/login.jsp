@@ -132,7 +132,7 @@
             <tr>
               <td width="141">用户名</td>
               <td width="190"><input type="text" style="color:#000" name="usr2" id="usr" onBlur="username()"></td>
-              <td width="138"><span id="1"></span></td>\<td width="8"></td>
+              <td width="138"><span id="1"></span></td><td width="8"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>

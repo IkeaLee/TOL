@@ -58,9 +58,9 @@
                 <ul class="nav nav-list">
                     <li class="nav-header"><i class="icon-wrench"></i>用户管理</li>
                     <li><a href="adminT.html">教师管理</a></li>
-                    <li><a href="adminS.html">学生管理</a></li>
+                    <li><a href="adminS.jsp">学生管理</a></li>
                     <li class="nav-header"><i class="icon-user"></i> 个人信息</li>
-                    <li class="active"><a href="myprofileAdmin.html">我的信息</a></li>
+                    <li class="active"><a href="adminprofile.jsp">我的信息</a></li>
                 </ul>
             </div>
         </div>
