@@ -12,28 +12,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-<script type="application/javascript">
-    function username() {
-        if(document.form1.usr2.value==0){
-            document.getElementById("1").innerHTML="<font color='red'>用户名不能为空</font>";
-            return false;
-        }
-        else{
-            document.getElementById("1").innerHTML="<font color='#7cfc00'>✔</font>";
-            return true;
-        }
-    }
-    function password() {
-        if(document.form1.passwd2.value==0){
-            document.getElementById("2").innerHTML="<font color='red'>密码不能为空</font>";
-            return false;
-        }
-        else{
-            document.getElementById("2").innerHTML="<font color='#7cfc00'>✔</font>";
-            return true;
-        }
-    }
-</script>
+    <meta http-equiv="refresh" content="3;url= login.jsp">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Welcome logging in</title>
@@ -83,14 +62,14 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href=""><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="button navbar-right">
-               
-                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="register.jsp" style="color: #d9edf7">没有账号？去注册</a></button>
+
+                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="login.jsp" style="color: #d9edf7">已有账号？去登陆</a></button>
 
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
@@ -106,86 +85,21 @@
 </nav>
 <div class="content-area">
     <div class="container">
-      <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
-        <h2 align="center">欢迎登陆本系统</h2>
-          <form name="form1" method="post" action="loginservlet" onsubmit="password()&&username()">
-          <table width="477" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-                <td>请选择您的身份<br>            </td>
-                <td>
-                  <label>
-                    <input align="left" type="radio" name="member" value="s" id="member_0">
-                  学生</label>
-              
-                  
-                    
-                    <label>
-                      <input type="radio" name="member" value="t" id="member_1">
-                      教师</label>
-                  
-                 
-                    
-                    <label> 
-                      <input type="radio" name="member" value="a" id="member_2">
-                      管理员</label>
-                    
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="141">用户名</td>
-              <td width="190"><input type="text" style="color:#000" name="usr2" id="usr" onBlur="username()"></td>
-              <td width="138"><span id="1"></span></td><td width="8"></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td><label for="usr">&nbsp; </label></td>
-            </tr>
-            <tr>
-              <td>密码</td>
-              <td><input type="password" style="color:#000" name="passwd2" id="passwd" onBlur="password()"></td>
-              <td><label for="passwd"><span id="2"></span></label></td>
-            </tr>
-            <tr>
-              <td colspan="3">&nbsp;                
-            </tr>
-            <tr>
-              <td colspan="3"><div align="right">&nbsp;</div>
-                <div align="center">
-                  <input align="left" type="submit" style="color: black">
-                </div>
-            </tr>
-          </table>
-          <p align="left">&nbsp;</p>
-          <p align="left">
-          <p>&nbsp;</p>
-            <table align="left" width="200" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="56">&nbsp;</td>
-                <td width="144">&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td colspan="2"></tr>
-              <tr>
-                <td colspan="2"></tr>
-            </table>
-            
-  </form></p>
-      </div>
+        <div  data-wow-delay="1s">
+
+            <br>
+            <br>
+
+            <br>
+            <br>
+
+            <h2 align="center">您还未登陆，请登录后访问</h2><br>
+
+
+            <p align="left"> 3秒后自动跳转登录界面 </p>
+            <br>
+            <br>
+        </div>
         <div class="row how-it-work text-center"></div>
     </div>
     <div class="container"></div>

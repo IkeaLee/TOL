@@ -2,9 +2,12 @@ package cn.cabbsir.teacherol.entity;
 
 public class QuestionInfo {
     private int id;
-    private String question;
+    private String subject;
+    private int gradeAge;
+    private String submitUser;
+    private String content;
     private String status;
-    private String subUser;
+    private String answerUser;
 
     public int getId() {
         return id;
@@ -14,12 +17,36 @@ public class QuestionInfo {
         this.id = id;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public int getGradeAge() {
+        return gradeAge;
+    }
+
+    public void setGradeAge(int gradeAge) {
+        this.gradeAge = gradeAge;
+    }
+
+    public String getSubmitUser() {
+        return submitUser;
+    }
+
+    public void setSubmitUser(String submitUser) {
+        this.submitUser = submitUser;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getStatus() {
@@ -30,11 +57,11 @@ public class QuestionInfo {
         this.status = status;
     }
 
-    public String getSubUser() {
-        return subUser;
+    public String getAnswerUser() {
+        return answerUser;
     }
 
-    public void setSubUser(String subUser) {
-        this.subUser = subUser;
+    public void setAnswerUser(String answerUser) {
+        this.answerUser = answerUser;
     }
 }
