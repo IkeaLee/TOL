@@ -17,7 +17,7 @@ public class UserInfoDao {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
             //为了减少编译次数，要将变量换为?
-            st=conn.prepareStatement("select username,password,email,area,teachingarea,teachingage from teacher WHERE userrname LIKE ?");
+            st=conn.prepareStatement("select username,password,email,area,teachingarea,teachingage from teacher WHERE username LIKE ?");
             //SetType(No.,Values);
             st.setString(1,"%"+name+"%");
             //执行sql语句

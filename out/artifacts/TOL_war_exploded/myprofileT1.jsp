@@ -40,7 +40,7 @@
             }
         }
     </script>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>我的信息</title>
     <meta name="description" content="Easy to ask question to teacher">
@@ -88,7 +88,7 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header"><i class="icon-user"></i> 个人信息</li>
-                    <li class="active"><a href="myprofileS.jsp">我的信息</a></li>
+                    <li class="active"><a href="myprofileT1.jsp">我的信息</a></li>
 
                 </ul>
             </div>
@@ -98,7 +98,7 @@
                 <div class="page-header">
                     <h1>我的个人信息 <small>修改个人信息</small></h1>
                 </div>
-                <form method="post" class="form-horizontal" action="UpdateSServlet">
+                <form class="form-horizontal" action="updateT1Servlet" method="post">
                     <fieldset>
                         <div class="control-group">
                             <%
@@ -108,28 +108,31 @@
                                 String password = null;
                                 int score = 0;
                                 String area = null;
-                                int grade = 0;
+                                int teachingAge = 0;
                                 String weizhi;
                                 String []g=null;
+                                String teachingArea = null;
                                 int x,y;
                                 if(user!=null){
                                     username = user.getUsername();
+                                    teachingArea = user.getTeachingArea();
                                     email = user.getEmail();
                                     password = user.getPassword();
                                     score = user.getScore();
-                                    grade = user.getGrade();
+                                    teachingAge = user.getGrade();
                                     area= user.getArea();
                                     g=area.split(",");
                                     x=Integer.parseInt(g[0]);
                                     y=Integer.parseInt(g[1]);
                                     AreaInfo ai = new AreaInfo();
                                     weizhi = ai.Judgement(x,y);
+                                    pageContext.setAttribute("teachingArea",teachingArea);
                                     pageContext.setAttribute("area", weizhi);
                                     pageContext.setAttribute("username",username);
                                     pageContext.setAttribute("email",email);
                                     pageContext.setAttribute("password",password);
                                     pageContext.setAttribute("score",score);
-                                    pageContext.setAttribute("grade",grade);
+                                    pageContext.setAttribute("teachingAge",teachingAge);
                                 }
                             %>
                             <label class="control-label" >用户名</label>
@@ -142,14 +145,14 @@
                             <label class="control-label" for="email">电子邮件</label>
                             <div class="controls">
                                 <span style="color: #00AEEF">${email}</span><br>
-                                <input type="text" class="input-xlarge" id="email" value="请输入新的邮箱地址" name="email"/>
+                                <input type="text" class="input-xlarge" id="email" name="email" value="请输入新的邮箱地址" />
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="password">密码</label>
                             <div class="controls">
                                 <span STYLE="color: #00AEEF">${password}</span><br>
-                                <input type="text" class="input-xlarge" id="password" value="请输入新的密码" name="password"/>
+                                <input type="text" class="input-xlarge" name="password" id="password" value="请输入新的密码" />
                             </div>
                         </div>
                         <div class="control-group">
@@ -174,6 +177,25 @@
                             </div>
                         </div>
                         <div class="control-group">
+                            <label class="control-label" >教学学科</label>
+                            <div class="controls">
+							<span id="teachingArea" style="color: #00AEEF">
+                                ${teachingArea}
+                            </span>
+                            </div>
+                            <div class="controls">
+                                <select name="subject">
+                                    <option value="math">数学</option>
+                                    <option value="chinese">语文</option>
+                                    <option value="english">英语</option>
+                                    <option value="physics">物理</option>
+                                    <option value="chemistory">化学</option>
+                                    <option value="biology">生物</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
                             <label class="control-label" >积分</label>
                             <div class="controls">
 							<span id="score" style="color: #00AEEF">
@@ -182,24 +204,14 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" >年级</label>
-                            <div class="controls"><span style="color: #00AEEF;">${grade}</span> </div>
+                            <label class="control-label" >教龄</label>
+                            <div class="controls"><span style="color: #00AEEF;">${teachingAge}</span> </div>
                             <div class="controls">
-                                <select name="grade">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
+                                <input name="age" value = "请输入1-40数字">
                             </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofileS.jsp">取消</a><a class="btn" href="indexL.jsp">返回</a>
+                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofileT1.jsp">取消</a><a class="btn" href="adminT.jsp">返回</a>
                         </div>
                     </fieldset>
                 </form>

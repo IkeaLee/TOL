@@ -40,7 +40,7 @@
             }
         }
     </script>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>我的信息</title>
     <meta name="description" content="Easy to ask question to teacher">
@@ -98,7 +98,7 @@
                 <div class="page-header">
                     <h1>我的个人信息 <small>修改个人信息</small></h1>
                 </div>
-                <form method="post" class="form-horizontal" action="UpdateSServlet">
+                <form method="post" class="form-horizontal" action="UpdateS1Servlet">
                     <fieldset>
                         <div class="control-group">
                             <%
@@ -199,7 +199,7 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofileS.jsp">取消</a><a class="btn" href="indexL.jsp">返回</a>
+                            <input type="submit" class="btn btn-success btn-large" value="保存改动" /> <a class="btn" href="myprofileS1.jsp">取消</a><a class="btn" href="adminS.jsp">返回</a>
                         </div>
                     </fieldset>
                 </form>

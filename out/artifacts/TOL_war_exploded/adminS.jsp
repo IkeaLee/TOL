@@ -60,7 +60,7 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header"><i class="icon-wrench"></i>用户管理</li>
-                    <li><a href="adminT.html">教师管理</a></li>
+                    <li><a href="adminT.jsp">教师管理</a></li>
                     <li class="active"><a href="adminS.jsp">学生管理</a></li>
 
                     <li class="nav-header"><i class="icon-user"></i>个人信息</li>
@@ -91,7 +91,7 @@
                         </tr>
                         <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                         <tr>
-                            <input  type="submit" class="btn btn-success" value="查询用户">
+                            <input  type="submit" class="btn btn-success" value="查询">
                         </tr>
                     </table>
                 </div>
@@ -103,7 +103,7 @@
                         </tr>
                         <c:forEach items="${users}" var="u">
                             <tr>
-                                <td>${u.username}</td><td>${u.password}</td><td>${u.email}</td><td>${u.grade}</td><td><a class="btn btn-success" href="#">修改</a></td>
+                                <td>${u.username}</td><td>${u.password}</td><td>${u.email}</td><td>${u.grade}</td><td><a class="btn btn-success" href="adminuSServlet?username=${u.username}">修改</a></td>
                             </tr>
                         </c:forEach>
                     </table>

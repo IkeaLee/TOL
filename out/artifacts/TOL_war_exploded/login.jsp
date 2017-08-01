@@ -18,12 +18,20 @@
             document.getElementById("1").innerHTML="<font color='red'>用户名不能为空</font>";
             return false;
         }
+        else{
+            document.getElementById("1").innerHTML="<font color='#7cfc00'>✔</font>";
+            return true;
+        }
     }
     function password() {
         if(document.form1.passwd2.value==0){
             document.getElementById("2").innerHTML="<font color='red'>密码不能为空</font>";
             return false;
-        }     
+        }
+        else{
+            document.getElementById("2").innerHTML="<font color='#7cfc00'>✔</font>";
+            return true;
+        }
     }
 </script>
     <meta charset="utf-8">

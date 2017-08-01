@@ -88,7 +88,7 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header"><i class="icon-user"></i> 个人信息</li>
-                    <li class="active"><a href="my-profile.html">我的信息</a></li>
+                    <li class="active"><a href="myprofileT.jsp">我的信息</a></li>
 
                 </ul>
             </div>

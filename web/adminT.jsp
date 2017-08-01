@@ -74,42 +74,42 @@
                 <div class="page-header">
                     <h1>Users <small>All users</small></h1>
                 </div>
-                <form action="adminSServlet" method="post" name="formAdminS">
-                <div>
-                    <table width="237" height="41">
-                        <tr>
-                            <td>
-                            <td><input value="在此处输入姓名" type="text" id="username" name="user"></td>
-                            </td>
-                        </tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                        <tr>
-                             <select name="choice" id="stu">
-                            <option value="1" >查询所有学生</option>
-                            <option value="2">姓名查询学生</option>
-                        </select>
-                        </tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                        <tr>
-                            <input  type="submit" class="btn btn-success" value="查询">
-                        </tr>
-                    </table>
-                </div>
+                <form action="adminTServlet" method="post" name="formAdminT">
+                    <div>
+                        <table width="237" height="41">
+                            <tr>
+                                <td>
+                                <td><input value="在此处输入姓名" type="text" id="username" name="user"></td>
+                                </td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <select name="choice" id="stu">
+                                    <option value="1" >查询所有教师</option>
+                                    <option value="2">姓名查询教师</option>
+                                </select>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <input  type="submit" class="btn btn-success" value="查询">
+                            </tr>
+                        </table>
+                    </div>
                 </form>
 
-                    <table width="682">
+                <table width="682">
+                    <tr>
+                        <td>姓名</td><td>密码</td><td>电子邮件</td><td>教龄</td><td>学科</td><td>操作</td>
+                    </tr>
+                    <c:forEach items="${users}" var="u">
                         <tr>
-                            <td>姓名</td><td>密码</td><td>电子邮件</td><td>年级</td><td>操作</td>
+                            <td>${u.username}</td><td>${u.password}</td><td>${u.email}</td><td>${u.teachingAge}</td><td>${u.teachingArea}</td><td><a class="btn btn-success" href="adminuTServlet?username=${u.username}">修改</a></td>
                         </tr>
-                        <c:forEach items="${users}" var="u">
-                            <tr>
-                                <td>${u.username}</td><td>${u.password}</td><td>${u.email}</td><td>${u.grade}</td><td><a class="btn btn-success" href="adminuSServlet?username=${u.username}">修改</a></td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                
+                    </c:forEach>
+                </table>
 
-                </div>
+
+            </div>
         </div>
     </div>
 
