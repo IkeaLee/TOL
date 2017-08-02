@@ -1,8 +1,9 @@
-<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %><%--
+<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %>
+<%@ page import="cn.cabbsir.teacherol.entity.QuestionInfo" %><%--
   Created by IntelliJ IDEA.
   User: new
-  Date: 2017/8/1
-  Time: 15:32
+  Date: 2017/8/2
+  Time: 13:49
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>我要提问</title>
+    <title>回答问题</title>
     <meta name="description" content="Easy to ask question to teacher">
     <meta name="author" content="Sandman">
     <meta name="keyword" content="html, css, bootstrap, Teacher-Student">
@@ -30,12 +31,89 @@
     <link rel="stylesheet" href="css/owl.transitions.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
+    <link href="css/headfont.css" rel="stylesheet" type="text/css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <style>
+        table {
+            *border-collapse: collapse; /* IE7 and lower */
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .zebra td, .zebra th {
+            padding: 10px;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        .zebra tbody tr:nth-child(even) {
+            background: #f5f5f5;
+            -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+            -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+            box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+        }
+
+        .zebra th {
+            text-align: left;
+            text-shadow: 0 1px 0 rgba(255,255,255,.5);
+            border-bottom: 1px solid #ccc;
+            background-color: #eee;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eee));
+            background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
+            background-image:    -moz-linear-gradient(top, #f5f5f5, #eee);
+            background-image:     -ms-linear-gradient(top, #f5f5f5, #eee);
+            background-image:      -o-linear-gradient(top, #f5f5f5, #eee);
+            background-image:         linear-gradient(top, #f5f5f5, #eee);
+        }
+
+        .zebra th:first-child {
+            -moz-border-radius: 6px 0 0 0;
+            -webkit-border-radius: 6px 0 0 0;
+            border-radius: 6px 0 0 0;
+        }
+
+        .zebra th:last-child {
+            -moz-border-radius: 0 6px 0 0;
+            -webkit-border-radius: 0 6px 0 0;
+            border-radius: 0 6px 0 0;
+        }
+
+        .zebra th:only-child{
+            -moz-border-radius: 6px 6px 0 0;
+            -webkit-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .zebra tfoot td {
+            border-bottom: 0;
+            border-top: 1px solid #fff;
+            background-color: #f1f1f1;
+        }
+
+        .zebra tfoot td:first-child {
+            -moz-border-radius: 0 0 0 6px;
+            -webkit-border-radius: 0 0 0 6px;
+            border-radius: 0 0 0 6px;
+        }
+
+        .zebra tfoot td:last-child {
+            -moz-border-radius: 0 0 6px 0;
+            -webkit-border-radius: 0 0 6px 0;
+            border-radius: 0 0 6px 0;
+        }
+
+        .zebra tfoot td:only-child{
+            -moz-border-radius: 0 0 6px 6px;
+            -webkit-border-radius: 0 0 6px 6px;
+            border-radius: 0 0 6px 6px
+        }
+
+
+    </style>
     <style>
         .elegant-aero {
             margin-left:auto;
             margin-right:auto;
-            max-width: 80%;
+            max-width: 100%;
             background: #D2E9FF;
             padding: 20px 20px 20px 20px;
             font: 12px Arial, Helvetica, sans-serif;
@@ -59,11 +137,8 @@
             color: #5E5E5E;
         }
         .elegant-aero label {
-	display: block;
-	margin: 0px 0px 5px;
-	font-size: 24px;
-	color: #00ADEF;
-	font-family: "Times New Roman", Times, serif;
+            display: block;
+            margin: 0px 0px 5px;
         }
         .elegant-aero label>span {
             float: left;
@@ -93,7 +168,6 @@
             width: 90%;
         }
         .elegant-aero select {
-
             appearance:none;
             -webkit-appearance:none;
             -moz-appearance: none;
@@ -126,13 +200,9 @@
         }
         .elegant-aero .button:hover{
             background: #3EB1DD;
-        }
-    </style>
+        }</style>
 </head>
 <body>
-
-<div id="preloader"></div>
-<!-- Body content -->
 
 <div class="header-connect">
     <div class="container">
@@ -140,6 +210,7 @@
             <div class="col-md-5 col-sm-8 col-xs-8">
                 <div class="header-half header-call">
                     <p>
+
                         <span>Powered by Sandman,CabbSir,GeorgeChen7</span>
                     </p>
                 </div>
@@ -152,102 +223,81 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="indexL.jsp"><img src="img/logo.png" alt=""></a>
+
+            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="button navbar-right">
                 <%
+                    QuestionInfo question = (QuestionInfo) session.getAttribute("selectquestion");
                     UserInfo u = (UserInfo) session.getAttribute("loginuser");
                     String username = null;
-                    int score=0;
+                    String content = null;
+                    String name = null;
+                    int id=0;
+                    int grade=0;
                     if(u!=null){
+                        content = question.getContent();
+                        id=question.getId();
                         username = u.getUsername();
-                        score = u.getScore();
+                        name= question.getSubmitUser();
+                        grade=question.getGradeAge();
+                        pageContext.setAttribute("id",id);
                         pageContext.setAttribute("username",username);
-                        pageContext.setAttribute("score",score);
+                        pageContext.setAttribute("content",content);
+                        pageContext.setAttribute("name",name);
+                        pageContext.setAttribute("grade",grade);
+                        //测试
+                        System.out.println("获得的id为"+id+"用户名"+username+"内容"+content+"级别"+grade);
                     }
                 %>
-                欢迎您，<span style="color: #00ADEF">${username}</span> 同学
-                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
+                欢迎您，<span style="color: #00AEEF;">${username}</span>老师！
+                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileT.html" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a href="index.html">首页</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="active" href="myquestion.jsp">我的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexTeacher.html">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="active" href="unanswered.html">待回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredQuestion.html">已回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezoneT.html">文件大全</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div >
-<form name="questionform" action="questionSubServlet" method="post">
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<div class="content-area">
-    <div class="container">
-        <div  data-wow-delay="1s"><br>
-
-            <h2 align="center">在线提问</h2><br>
-      </div>
-        <div class="row how-it-work text-center"><table align="center">
-            <tr>
-                <td><div >
-                    <select name="sub" size="1" align="right">
-                        <option value="null" selected="selected">请选择科目   </option>
-                        <option value="math">数学       </option>
-                        <option value="chinese">语文        </option>
-                        <option value="english">英语        </option>
-                        <option value="physics">物理        </option>
-                        <option value="chemistry">化学         </option>
-                        <option value="biology">生物        </option>
-                    </select>
-                </div>
-                </td>
-                <td>
-                    <select name="gra" align="left">
-                        <option value="0" selected="selected">请选择年级   </option>
-                        <option value="1">一年级     </option>
-                        <option value="2">二年级     </option>
-                        <option value="3">三年级     </option>
-                        <option value="4">四年级     </option>
-                        <option value="5">五年级     </option>
-                        <option value="6">六年级     </option>
-                        <option value="7">七年级     </option>
-                        <option value="8">八年级     </option>
-                        <option value="9">九年级     </option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><input name="usr" type="hidden" value="${username}"></td><td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td colspan="2"><label for="textarea"></label>
-                    <textarea name="textarea" cols="100" rows="20" id="textarea">在这里输入问题详情</textarea></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td><td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><div>
-                    <input align="right" type="submit" value="提交">
-                </div></td><td><input type="reset" value="重置" align="left"></td>
-            </tr>
-        </table></div>
-    </div>
-<p>&nbsp;</p>
-
-</div></form>
-
-
-    </div>
+<br>
+<div class="container"><center><span id="headfont">问题详情</span></center>
+    <hr>
+    <br>
+    <table class="zebra">
+        <tr>
+            <th width="108" height="27" scope="col">提问者</th>
+            <th width="552" scope="col">内容</th>
+            <th width="185" scope="col">年级</th>
+        </tr>
+        <tr>
+            <th height="189" scope="row">${name}</th>
+            <td><textarea name="neirong" readonly="readonly" style="width:100%; height:100%;background: transparent;border-style: hidden">${content}</textarea></td>
+            <td>${grade}</td>
+        </tr>
+    </table>
+    <hr>
+    <form name="form1" method="post" action="answerQuestionServlet" class="elegant-aero">
+        <textarea  name="ans"id="question" placeholder="请输入你的解答"></textarea>
+        <input type="hidden" value="${username}" name="ansusr">
+        <input type="hidden" value="${id}" name="no">
+        <input type="submit" name="answer" value="提交">
+    </form>
+    <br>
+</div>
 <div class="footer-area">
     <div class="container">
-        <div class="row footer"></div>
+        <div class="row footer">
+
+            <div class="col-md-4">
+
+            </div>
+        </div>
 
     </div>
     <div class="row footer-copy">

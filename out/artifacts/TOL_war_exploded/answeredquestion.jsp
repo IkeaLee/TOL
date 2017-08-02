@@ -1,19 +1,22 @@
-<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %><%--
+<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %>
+<%@ page import="cn.cabbsir.teacherol.entity.QuestionInfo" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--
+
   Created by IntelliJ IDEA.
   User: new
-  Date: 2017/8/1
-  Time: 18:17
+  Date: 2017/8/2
+  Time: 11:20
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>我的问题</title>
+    <title>问题中心</title>
     <meta name="description" content="Easy to ask question to teacher">
     <meta name="author" content="Sandman">
     <meta name="keyword" content="html, css, bootstrap, Teacher-Student">
@@ -48,7 +51,6 @@
                 <div class="header-half header-call">
                     <p>
                         <span>Powered by Sandman,CabbSir,GeorgeChen7</span>
-
                     </p>
                 </div>
             </div>
@@ -60,7 +62,13 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="indexL.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -68,67 +76,54 @@
             <div class="button navbar-right">
                 <%
                     UserInfo u = (UserInfo) session.getAttribute("loginuser");
+                    Integer q = (Integer) session.getAttribute("no") ;
+                    Integer a = (Integer) session.getAttribute("all");
                     String username = null;
-                    int subtimes=0;
                     if(u!=null){
                         username = u.getUsername();
-                        subtimes = u.getSubTimes();
+                        pageContext.setAttribute("all",a);
                         pageContext.setAttribute("username",username);
-                        pageContext.setAttribute("subtimes",subtimes);
+                        pageContext.setAttribute("number",q);
                     }
                 %>
-                欢迎您，<span style="color: #00ADEF">${username}</span> 同学</span>
+                欢迎您，<span style="color: #00ADEF">${username}</span> 老师</span>
                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexL.jsp">首页</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="active" href="myquestion.jsp">我的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexTeacher.jsp">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.jsp">待回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredquestion.jsp">已回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezoneT.jsp">文件大全</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
 <div class="container">
     <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
-        <h5>我的问题</h5>
-        <h2>您本次登陆系统前已经在本站提交了<span style="color:orangered;">${subtimes}</span>道难题，祝学习进步！</h2>
+        <h5>问题中心</h5>
+        <h2>当前平台共有<span style="color: orangered">${all}</span>道题得到解答,其中您解答了<span style="color: orangered">${number}</span>道，感谢您的奉献</h2>
     </div>
-    <form action="questionSelectSServlet" method="post">
-        <input type="radio" name="mem" value="Y">查看已解决
-        <input type="radio" name="mem" value="N">查看未解决
-        <input type="hidden" value="${username}" name="usr">
-        <input type="submit">
-    </form>
     <div class="row jobs">
         <div class="col-md-9">
             <div class="job-posts table-responsive">
                 <table class="table">
                     <c:forEach items="${questions}" var="q">
-                    <tr class="odd wow fadeInUp" data-wow-delay="1s">
-                        <td width="51%" class="tbl-title"><h4>${q.id}<br><span class="job-type">${q.subject}</span></h4></td>
-                        <td width="17%"><p>题目水平：${q.gradeAge}</p></td>
-                        <td width="12%"><p>解答教师：${q.answerUser}</p></td>
-                        <td width="8%" class="tbl-apply"><a href="questionDSServlet?id=${q.id}">详情</a></td>
-                    </tr>
+                        <tr class="odd wow fadeInUp" data-wow-delay="1s">
+                            <td width="51%" class="tbl-title"><h4>题号${q.id}<br><span class="job-type">${q.subject}</span></h4></td>
+                            <td width="17%"><p>题目水平：${q.gradeAge}</p></td>
+                            <td width="12%"><p><i class="icon-location"></i>已解答</p></td>
+                            <td width="12%"><p>解答教师：${q.answerUser}</p></td>
+                            <td width="8%" class="tbl-apply"><a href="questionDSServlet?id=${q.id}">详情</a></td>
+                        </tr>
                     </c:forEach>
                 </table>
-
             </div>
-
         </div>
         <div class="col-md-3 hidden-sm">
-            <div class="job-add wow fadeInRight" data-wow-delay="1.5s">
-                <h2>还有问题?</h2>
-                <a href="askquestion.jsp">马上提问！</a>
-            </div>
+
         </div>
     </div>
 </div>
-
 
 <div class="footer-area">
     <div class="container">
@@ -141,9 +136,7 @@
 
     </div>
     <div class="row footer-copy">
-        <p><span><center>
-                     Powered by Team13, All rights reserved
-        </center></span> </p>
+        <p><span><center>Powered by Team13, All rights reserved</center></span> </p>
     </div>
 </div>
 </div>

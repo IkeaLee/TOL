@@ -195,8 +195,8 @@
       </div>
         <div class="row how-it-work text-center"><table align="center">
             <tr>
-                <td><div align="right">
-                    <select name="sub" size="1">
+                <td><div >
+                    <select name="sub" size="1" align="right">
                         <option value="null" selected="selected">请选择科目   </option>
                         <option value="math">数学       </option>
                         <option value="chinese">语文        </option>
@@ -208,7 +208,7 @@
                 </div>
                 </td>
                 <td>
-                    <select name="gra">
+                    <select name="gra" align="left">
                         <option value="0" selected="selected">请选择年级   </option>
                         <option value="1">一年级     </option>
                         <option value="2">二年级     </option>
@@ -233,9 +233,9 @@
                 <td>&nbsp;</td><td>&nbsp;</td>
             </tr>
             <tr>
-                <td><div align="right">
-                    <input type="submit" value="提交">
-                </div></td><td><input type="reset" value="重置"></td>
+                <td><div>
+                    <input align="right" type="submit" value="提交">
+                </div></td><td><input type="reset" value="重置" align="left"></td>
             </tr>
         </table></div>
     </div>

@@ -177,19 +177,19 @@
     <table class="zebra">
         <tr>
             <th width="108" height="27" scope="col">操作人</th>
-            <th width="185" scope="col">修改时间</th>
+            <th width="185" scope="col">&nbsp;</th>
             <th width="552" scope="col">内容</th>
         </tr>
         <tr>
             <th height="189" scope="row">提问者</th>
             <td>${username}</td>
-            <td><textarea style="width:100%; height:100%;">${content}</textarea></td>
+            <td><textarea style="width:100%; height:100%;background:transparent;border-style:none;" readonly="readonly">${content}</textarea></td>
 
         </tr>
         <tr>
             <th height="248" scope="row">回答教师</th>
             <td>${answeruser}</td>
-            <td><textarea style="width:100%; height:100%;" >${answer}</textarea></td>
+            <td><textarea style="width:100%; height:100%; background:transparent; border-style:none ;" readonly="readonly">${answer}</textarea></td>
 
         </tr>
     </table>

@@ -111,15 +111,12 @@
                     <tr class="odd wow fadeInUp" data-wow-delay="1s">
                         <td width="51%" class="tbl-title"><h4>${q.id}<br><span class="job-type">${q.subject}</span></h4></td>
                         <td width="17%"><p>题目水平：${q.gradeAge}</p></td>
-                        <td width="12%"><p><i class="icon-location"></i>解答?${q.status}</p></td>
                         <td width="12%"><p>解答教师：${q.answerUser}</p></td>
                         <td width="8%" class="tbl-apply"><a href="questionDSServlet?id=${q.id}">详情</a></td>
                     </tr>
                     </c:forEach>
                 </table>
-                <div class="more-jobs">
-                    <a href=""> <i class="fa fa-refresh"></i>More</a>
-                </div>
+
             </div>
 
         </div>

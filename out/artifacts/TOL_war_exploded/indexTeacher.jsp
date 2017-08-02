@@ -62,7 +62,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="indexTeacher.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,10 +81,10 @@
                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileT.jsp" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexTeacher.html">首页</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.html">待回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredQuestion.html">已回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezoneT.html">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexTeacher.jsp">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.jsp">待回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredquestion.jsp">已回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezoneT.jsp">文件大全</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -106,7 +106,7 @@
                 <h2>足不出户，在线答疑</h2>
                 <p>在线解答学生们提出的问题，为您减轻教学负担！</p>
                 <p><span class=" form-inline">
-                          <input type="submit" class="btn" value="在线答疑">
+                          <input href="answerquestion.jsp" type="button" class="btn" value="在线答疑">
                         </span></p>
 
             </div>
@@ -123,22 +123,22 @@
             <div class="col-md-4">
                 <div class="single-work wow fadeInUp" data-wow-delay="0.8s"><a href="askquestion.html">
                     <img src="img/how-work1.png" alt="">
-                    <h3>在线解题</h3>
-                    <p>疑难问题一键提交，海量名师在线解答，妈妈再也不用担心我有不会做的题啦！</p></a>
+                    <h3>在线答疑</h3>
+                    <p>学生问题一键解答，海量积分轻松到手，丰富教学计划和经验的利器</p></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s"><a href="filezone.html">
                     <img src="img/how-work2.png" alt="">
                     <h3>文件中心</h3>
-                    <p>讲课视频、名校试题、学霸笔记，一网打尽，无限下载！</p></a>
+                    <p>讲课视频、名校试题、学生答案，一网打尽，无限下载！</p></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-work wow fadeInUp"  data-wow-delay="1s">
                     <img src="img/how-work3.png" alt="">
-                    <h3>一对一辅导</h3>
-                    <p>特别喜欢某位老师的授课风格？我们为您提供老师的联系方式，一对一辅导不是难事！</p>
+                    <h3>针对性推题</h3>
+                    <p>我们会针对您注册时填写的学科信息，精准推荐试题回答</p>
                 </div>
             </div>
         </div>

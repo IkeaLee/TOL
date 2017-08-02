@@ -62,7 +62,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="indexL.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -108,7 +108,7 @@
                 <h2>从未如此简单</h2>
                 <p>独创全新问答引擎，坐拥顶                        级教师资源，黄冈名师为您在线光速解题！</p>
                 <p><span class=" form-inline">
-                          <input type="submit" class="btn" value="在线提问">
+                          <input href="askquestion.jsp"  type="button" class="btn" value="在线提问">
                         </span></p>
 
             </div>

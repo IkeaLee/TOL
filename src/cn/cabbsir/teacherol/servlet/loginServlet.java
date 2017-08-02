@@ -7,6 +7,7 @@ import cn.cabbsir.teacherol.logic.UserInfoDao;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @javax.servlet.annotation.WebServlet(name = "loginServlet",urlPatterns = "/loginservlet")
 public class loginServlet extends javax.servlet.http.HttpServlet {
@@ -16,7 +17,6 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
         String identify = request.getParameter("member");
         UserInfoDao dao =new UserInfoDao();
         QuestionInfoDao qdao= new QuestionInfoDao();
-        int n = qdao.SelectAnswered();
         if(identify.equals("s")){
             //测试代码
             System.out.println("chooseing s");
@@ -25,9 +25,12 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
                 response.sendRedirect("login.jsp");
             }
             else{
+                int n = qdao.SelectAnswered();
+                ArrayList<QuestionInfo> questions=qdao.SelectAllAnswered();
                 HttpSession session = request.getSession();
                 session.setAttribute("loginuser",loginUser);
                 session.setAttribute("answerednum",n);
+                session.setAttribute("questionss",questions);
                 request.getRequestDispatcher("indexL.jsp").forward(request,response);
             }
         }
@@ -39,7 +42,19 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
                 response.sendRedirect("login.jsp");
             }
             else{
+                //测试代码
+                System.out.println(loginUser.getTeachingArea());
+                int m = loginUser.getFinishTimes();
+                int x = qdao.SelectAnswered();
+                int n = qdao.SelectUnanswered(loginUser.getTeachingArea());
+                ArrayList<QuestionInfo> questions=qdao.SelectTunAnswered(loginUser.getTeachingArea());
+                ArrayList<QuestionInfo> question=qdao.SelectAllAnswered();
                 HttpSession session = request.getSession();
+                session.setAttribute("no",m);//提交次数
+                session.setAttribute("num",n);//教学学科
+                session.setAttribute("all",x);//总体术
+                session.setAttribute("questions",question);//已经解决的
+                session.setAttribute("questionss",questions);//尚未解决的
                 session.setAttribute("loginuser",loginUser);
                 request.getRequestDispatcher("indexTeacher.jsp").forward(request,response);
             }
