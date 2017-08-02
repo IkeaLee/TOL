@@ -14,6 +14,8 @@ import java.io.IOException;
 @WebServlet(name = "questionSubServlet",urlPatterns = "/questionSubServlet")
 public class questionSubServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         String content = request.getParameter("textarea");
         String subject = request.getParameter("sub");
         String gradeage = request.getParameter("gra");
@@ -23,6 +25,7 @@ public class questionSubServlet extends HttpServlet {
             response.sendRedirect("askquestion.jsp");
         }
         else{
+            dao.SubtimeAdd(submituser);
             request.getRequestDispatcher("askSuccess.jsp").forward(request,response);
         }
     }

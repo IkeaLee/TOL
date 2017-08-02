@@ -1,6 +1,8 @@
 package cn.cabbsir.teacherol.servlet;
 
+import cn.cabbsir.teacherol.entity.QuestionInfo;
 import cn.cabbsir.teacherol.entity.UserInfo;
+import cn.cabbsir.teacherol.logic.QuestionInfoDao;
 import cn.cabbsir.teacherol.logic.UserInfoDao;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +15,8 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
         String password = request.getParameter("passwd2");
         String identify = request.getParameter("member");
         UserInfoDao dao =new UserInfoDao();
+        QuestionInfoDao qdao= new QuestionInfoDao();
+        int n = qdao.SelectAnswered();
         if(identify.equals("s")){
             //测试代码
             System.out.println("chooseing s");
@@ -23,6 +27,7 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
             else{
                 HttpSession session = request.getSession();
                 session.setAttribute("loginuser",loginUser);
+                session.setAttribute("answerednum",n);
                 request.getRequestDispatcher("indexL.jsp").forward(request,response);
             }
         }

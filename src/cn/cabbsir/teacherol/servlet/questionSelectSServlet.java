@@ -8,28 +8,31 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "stu",urlPatterns = "/stu")
+@WebServlet(name = "questionSelectSServlet",urlPatterns = "/questionSelectSServlet")
 public class questionSelectSServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         QuestionInfoDao dao = new QuestionInfoDao();
         String x = request.getParameter("mem");
         String username = request.getParameter("usr");
-        ArrayList<QuestionInfo> questions = new ArrayList<QuestionInfo>();
+        ArrayList<QuestionInfo> questions;
         if(x.equals("Y")){
             //测试代码
             System.out.println("选择已解答");
+            questions = dao.SelectSY(username);
         }
         else{
             //测试代码
             System.out.println("选择未解答"+username);
-            QuestionInfo question = dao.SelectSN(username);
-            questions.add(question);
+            questions = dao.SelectSN(username);
         }
         request.setAttribute("questions",questions);
-        request.getRequestDispatcher("myquestions.jsp").forward(request,response);
+        request.getRequestDispatcher("myquestion.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

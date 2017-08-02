@@ -117,7 +117,9 @@
                     </tr>
                     </c:forEach>
                 </table>
-
+                <div class="more-jobs">
+                    <a href=""> <i class="fa fa-refresh"></i>More</a>
+                </div>
             </div>
 
         </div>
