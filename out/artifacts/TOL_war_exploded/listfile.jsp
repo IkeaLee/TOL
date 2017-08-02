@@ -1,6 +1,10 @@
-<!DOCTYPE html>
-<html class="no-js"> <!--<![endif]-->
-    <head>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- 制作者：陈茁-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>文件大全</title>
@@ -145,44 +149,31 @@ table {
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-        <div class="container">
-        
-    			 <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
-                    <h5>文件中心</h5>
-                    <h2>当前共有<span>3</span>份文件可供下载</h2>
-                </div>
-      <table width="642" border="1" align="center" class="bordered">
-        <tr>
-          <th width="95" scope="col">上传者</th>
-          <th width="258" scope="col">文件名称</th> 
-          <!-- 有超链接跳转到指定文件的文件详情 -->
-          <th width="96" scope="col">文件种类</th>
-          <th width="123" scope="col">上传时间</th>
-        </tr>
-        <tr>
-          <td>李建利</td>
-          <td><a href="filedetail.html">lijianli.rar</a></td>
-          <td>教学视频</td>
-          <td>2017年7月27日10:14:36</td>
-        </tr>
-        <tr>
-          <td>李静梅</td>
-          <td>计算机组织与结构.rar</td>
-          <td>教学资料</td>
-          <td>2017年7月27日10:15:44</td>
-        </tr>
-        <tr>
-          <td>姚郁</td>
-          <td>关于对计算机学院部分教师实行开除处分的通知.doc</td>
-          <td>文档</td>
-          <td>2017年7月27日10:17:08</td>
-        </tr>
-      </table>
-      <p class="btn-link">
-  <a href="uploadfileT.html"> <button>我要上传</button></a>
+ 
+<body>
+<div class="container">
+<!-- 遍历Map集合 -->
+<c:forEach var="me" items="${fileNameMap}">
+<c:url value="/servlet/DownLoadServlet" var="downurl">
+<c:param name="filename" value="${me.key}"></c:param>
+</c:url>
+ <table width="642" border="1" align="center" class="bordered">
+<tr>
+<tr>
+<th>文件名称</th>
+<th>操作</th>
+</tr>
+<th>${me.value}</th>
+<th><a href="${downurl}">下载</a></th>
+</tr>
+</table>
+<br/>
+</c:forEach>
+ <p class="btn-link">
+  <a href="index.jsp"> <button>我要上传</button></a>
       </p>
-    </div>
-    <div class="footer-area">
+      </div>
+ <div class="footer-area">
             <div class="container">
                 <div class="row footer">
                     
@@ -193,7 +184,7 @@ table {
                    
                 </div>
                 <div class="row footer-copy">
-                    <p><span><center>(C)Sandman Technology, All rights reserved</span></center> </p>
+                    <p><center><span>(C)Sandman Technology, All rights reserved</span></center> </p>
                 </div>
             </div>
         </div>

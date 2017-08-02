@@ -1,12 +1,15 @@
 package cn.cabbsir.teacherol.servlet;
 
+import cn.cabbsir.teacherol.entity.MessageInfo;
 import cn.cabbsir.teacherol.entity.QuestionInfo;
 import cn.cabbsir.teacherol.entity.UserInfo;
+import cn.cabbsir.teacherol.logic.MessageInfoDao;
 import cn.cabbsir.teacherol.logic.QuestionInfoDao;
 import cn.cabbsir.teacherol.logic.UserInfoDao;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @javax.servlet.annotation.WebServlet(name = "loginServlet",urlPatterns = "/loginservlet")
@@ -17,6 +20,7 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
         String identify = request.getParameter("member");
         UserInfoDao dao =new UserInfoDao();
         QuestionInfoDao qdao= new QuestionInfoDao();
+        MessageInfoDao mdao=new MessageInfoDao();
         if(identify.equals("s")){
             //测试代码
             System.out.println("chooseing s");
@@ -27,7 +31,9 @@ public class loginServlet extends javax.servlet.http.HttpServlet {
             else{
                 int n = qdao.SelectAnswered();
                 ArrayList<QuestionInfo> questions=qdao.SelectAllAnswered();
+                ArrayList<MessageInfo> messages=mdao.getM();
                 HttpSession session = request.getSession();
+                session.setAttribute("m",messages);
                 session.setAttribute("loginuser",loginUser);
                 session.setAttribute("answerednum",n);
                 session.setAttribute("questionss",questions);

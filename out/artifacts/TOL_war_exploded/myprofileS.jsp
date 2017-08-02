@@ -106,9 +106,9 @@
                                 String username = null;
                                 String email=null;
                                 String password = null;
-                                int score = 0;
                                 String area = null;
                                 int grade = 0;
+                                int sub=0;
                                 String weizhi;
                                 String []g=null;
                                 int x,y;
@@ -116,7 +116,6 @@
                                     username = user.getUsername();
                                     email = user.getEmail();
                                     password = user.getPassword();
-                                    score = user.getScore();
                                     grade = user.getGrade();
                                     area= user.getArea();
                                     g=area.split(",");
@@ -124,11 +123,12 @@
                                     y=Integer.parseInt(g[1]);
                                     AreaInfo ai = new AreaInfo();
                                     weizhi = ai.Judgement(x,y);
+                                    sub=user.getSubTimes();
                                     pageContext.setAttribute("area", weizhi);
                                     pageContext.setAttribute("username",username);
                                     pageContext.setAttribute("email",email);
                                     pageContext.setAttribute("password",password);
-                                    pageContext.setAttribute("score",score);
+                                    pageContext.setAttribute("score",sub*2);
                                     pageContext.setAttribute("grade",grade);
                                 }
                             %>

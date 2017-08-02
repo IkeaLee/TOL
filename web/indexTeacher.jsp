@@ -84,7 +84,7 @@
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexTeacher.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.jsp">待回答的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredquestion.jsp">已回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezoneT.jsp">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet">文件大全</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

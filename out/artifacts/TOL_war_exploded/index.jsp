@@ -1,9 +1,13 @@
+<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %>
+<%@ page language="java" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+</head>
 <!DOCTYPE html>
 <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>联系我们</title>
+        <title>文件上传</title>
         <meta name="description" content="Easy to ask question to teacher">
         <meta name="author" content="Sandman">
         <meta name="keyword" content="html, css, bootstrap, Teacher-Student">
@@ -26,19 +30,14 @@
     </head>
     <body>
     
-     <div id="preloader">
-            <div id="status">&nbsp;</div>
-        </div>
-        <!-- Body content -->
-		
-        <div class="header-connect">
+     <div class="header-connect">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-sm-8 col-xs-8">
                         <div class="header-half header-call">
                             <p>
-                                <span><i class="icon-cloud"></i>+86 130-0986-2939</span>
-                                <span><i class="icon-mail"></i>deltasandman@163.com</span>
+                             
+                                <span>Powered by Sandman,CabbSir,GeorgeChen7</span>
                             </p>
                         </div>
                     </div>
@@ -50,41 +49,41 @@
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+              
+              <a class="navbar-brand" href="indexTeacher.jsp"><img src="img/logo.png" alt=""></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-             <div class="button navbar-right">
-                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">登录/注册</a></button>
+            <div class="button navbar-right"> <%
+                UserInfo u = (UserInfo) session.getAttribute("loginuser");
+                String username = null;
+                if(u!=null){
+                    username = u.getUsername();
+                    pageContext.setAttribute("username",username);
+                }
+            %>
+                欢迎您，<span style="color: #00AEEF;">${username}</span>老师！
+                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
               </div>
               <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a href="index.html">首页</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.html">我的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.html">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.html">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.html">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a class="active" href="contactus.html">联系我们</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexTeacher.jsp">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.jsp">待回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredQuestion.jsp">已回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a  class="active" href="/servlet/ListFileServlet">文件大全</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-    
-     <div class="footer-area">
+ <form action="${pageContext.request.contextPath}/servlet/UploadHandleServlet" enctype="multipart/form-data" method="post">
+  上传用户：<input type="text" name="username"><br/>
+  上传文件1：<input type="file" name="file1"><br/>
+  <input type="submit" value="提交">
+ </form>
+<div class="footer-area">
             <div class="container">
                 <div class="row footer">
-                    <div class="col-md-4">
-                        <div class="single-footer">
-                            <img src="img/footer-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                            
-                        </div>
-                    </div>
+                    
                     <div class="col-md-4">
                       
                         </div>
@@ -92,7 +91,10 @@
                    
                 </div>
                 <div class="row footer-copy">
-                    <p><span><center>(C)Sandman Technology, All rights reserved</span> | More Templates</center> </p>
+                    <p><span><center>
+                      (C)Sandman Technology, All rights reserved
+                    </center> 
+                    </span></p>
                 </div>
             </div>
         </div>

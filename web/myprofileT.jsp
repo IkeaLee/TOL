@@ -106,19 +106,19 @@
                                 String username = null;
                                 String email=null;
                                 String password = null;
-                                int score = 0;
                                 String area = null;
                                 int teachingAge = 0;
                                 String weizhi;
                                 String []g=null;
                                 String teachingArea = null;
+                                int finish=0;
                                 int x,y;
                                 if(user!=null){
                                     username = user.getUsername();
                                     teachingArea = user.getTeachingArea();
                                     email = user.getEmail();
                                     password = user.getPassword();
-                                    score = user.getScore();
+                                    finish = user.getFinishTimes();
                                     teachingAge = user.getGrade();
                                     area= user.getArea();
                                     g=area.split(",");
@@ -131,7 +131,7 @@
                                     pageContext.setAttribute("username",username);
                                     pageContext.setAttribute("email",email);
                                     pageContext.setAttribute("password",password);
-                                    pageContext.setAttribute("score",score);
+                                    pageContext.setAttribute("score",finish*3);
                                     pageContext.setAttribute("teachingAge",teachingAge);
                                 }
                             %>

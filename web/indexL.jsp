@@ -84,7 +84,7 @@
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.jsp">我的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.jsp">课后留言板</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -123,7 +123,7 @@
         </div>
         <div class="row how-it-work text-center">
             <div class="col-md-4">
-                <div class="single-work wow fadeInUp" data-wow-delay="0.8s"><a href="askquestion.html">
+                <div class="single-work wow fadeInUp" data-wow-delay="0.8s"><a href="askquestion.">
                     <img src="img/how-work1.png" alt="">
                     <h3>在线解题</h3>
                     <p>疑难问题一键提交，海量名师在线解答，妈妈再也不用担心我有不会做的题啦！</p></a>
@@ -131,7 +131,7 @@
             </div>
             <div class="col-md-4">
                 <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s"><a href="filezone.html">
-                    <img src="img/how-work2.png" alt="">
+                    <img src="img/how-work2.png" alt="">jsp
                     <h3>文件中心</h3>
                     <p>讲课视频、名校试题、学霸笔记，一网打尽，无限下载！</p></a>
                 </div>
@@ -139,8 +139,8 @@
             <div class="col-md-4">
                 <div class="single-work wow fadeInUp"  data-wow-delay="1s">
                     <img src="img/how-work3.png" alt="">
-                    <h3>一对一辅导</h3>
-                    <p>特别喜欢某位老师的授课风格？我们为您提供老师的联系方式，一对一辅导不是难事！</p>
+                    <h3>课后留言</h3>
+                    <p>特别喜欢某位老师的授课风格？不喜欢某个老师的回答方式？完全为学生提供的留言板让你完美吐槽！！！</p>
                 </div>
             </div>
         </div>
