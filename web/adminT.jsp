@@ -1,6 +1,5 @@
 
 <%@ page import="cn.cabbsir.teacherol.entity.AreaInfo" %>
-<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.

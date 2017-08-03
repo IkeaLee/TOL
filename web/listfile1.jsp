@@ -1,9 +1,13 @@
+<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%String bathPath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/";%>
+
 <!DOCTYPE HTML>
 <html>
 <head>
+    <base href="<%=bathPath%>">
     <!-- 制作者：陈茁-->
     <title>文件大全</title>
     <style>
@@ -89,25 +93,69 @@
         }
     </style>
 <body>
-<a href="../indexL.jsp">返回首页</a><br>
+<div class="header-connect">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-8 col-xs-8">
+                <div class="header-half header-call">
+                    <p>
+
+                        <span>Powered by Sandman,CabbSir,GeorgeChen7</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="indexL.jsp"><img src="img/logo.png" alt=""></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="button navbar-right">
+                <%
+                    UserInfo u = (UserInfo) session.getAttribute("loginuser");
+                    String username = null;
+                    if(u!=null){
+                        username = u.getUsername();
+                        pageContext.setAttribute("username",username);
+                    }
+                %>
+                欢迎您，<span style="color: #00ADEF">${username}</span> 同学
+                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileS.jsp" style="color: #d9edf7">个人中心</a></button>
+            </div>
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexL.jsp">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.jsp">我的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet1">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地习题</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 <h1>文件中心</h1>
 <!-- 遍历Map集合 -->
-<c:forEach var="me" items="${fileNameMap}">
-    <c:url value="/servlet/DownLoadServlet" var="downurl">
-        <c:param name="filename" value="${me.key}"></c:param>
-    </c:url>
     <table width="642" border="1" align="center" class="bordered">
-        <tr>
         <tr>
             <th>文件名称</th>
             <th>操作</th>
         </tr>
-        <th>${me.value}</th>
-        <th><a href="${downurl}">下载</a></th>
+        <c:forEach var="me" items="${fileNameMap}">
+        <c:url value="/servlet/DownLoadServlet" var="downurl">
+            <c:param name="filename" value="${me.key}"></c:param>
+        </c:url>
+        <td>${me.value}</td>
+        <td><a href="${downurl}">下载</a></td>
         </tr>
-    </table>
-    <br/>
-</c:forEach>
+</c:forEach></table>
 <p class="btn-link">
 </p>
 </div>

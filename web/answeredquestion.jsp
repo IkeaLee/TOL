@@ -76,7 +76,6 @@
             <div class="button navbar-right">
                 <%
                     UserInfo u = (UserInfo) session.getAttribute("loginuser");
-                    Integer q = (Integer) session.getAttribute("no") ;
                     Integer a = (Integer) session.getAttribute("all");
                     String username = null;
                     if(u!=null){
@@ -88,7 +87,7 @@
                     }
                 %>
                 欢迎您，<span style="color: #00ADEF">${username}</span> 老师</span>
-                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
+                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileT.jsp" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a  href="indexTeacher.jsp">首页</a></li>

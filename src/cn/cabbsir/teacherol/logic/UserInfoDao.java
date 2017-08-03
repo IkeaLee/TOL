@@ -29,6 +29,7 @@ public class UserInfoDao {
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
                 user.setArea(rs.getString("area"));
+                user.setFinishTimes(rs.getInt("finishtimes"));
                 user.setTeachingArea(rs.getString("teachingarea"));
             }
         } catch (ClassNotFoundException e) {
@@ -71,6 +72,7 @@ public class UserInfoDao {
             rs=st.executeQuery();
             if(rs.next()){
                 user=new UserInfo();
+                user.setSubTimes(rs.getInt("submitimes"));
                 user.setGrade(rs.getInt("grade"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));

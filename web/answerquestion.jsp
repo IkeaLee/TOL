@@ -224,7 +224,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="indexTeacher.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -254,7 +254,7 @@
                     }
                 %>
                 欢迎您，<span style="color: #00AEEF;">${username}</span>老师！
-                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileT.html" style="color: #d9edf7">个人中心</a></button>
+                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileT.jsp" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexTeacher.jsp">首页</a></li>

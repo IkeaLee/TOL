@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%String bathPath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/";%>
+
 <!DOCTYPE HTML>
 <html>
 <head>
+    <base href="<%=bathPath%>">
     <!-- 制作者：陈茁-->
     <title>文件大全</title>
     <style>
@@ -92,22 +95,19 @@
 <a href="../indexL.jsp">返回首页</a><br>
 <h1>文件中心</h1>
 <!-- 遍历Map集合 -->
-<c:forEach var="me" items="${fileNameMap}">
-    <c:url value="/servlet/DownLoadServlet" var="downurl">
-        <c:param name="filename" value="${me.key}"></c:param>
-    </c:url>
     <table width="642" border="1" align="center" class="bordered">
-        <tr>
         <tr>
             <th>文件名称</th>
             <th>操作</th>
         </tr>
-        <th>${me.value}</th>
-        <th><a href="${downurl}">下载</a></th>
+        <c:forEach var="me" items="${fileNameMap}">
+        <c:url value="/servlet/DownLoadServlet" var="downurl">
+            <c:param name="filename" value="${me.key}"></c:param>
+        </c:url>
+        <td>${me.value}</td>
+        <td><a href="${downurl}">下载</a></td>
         </tr>
-    </table>
-    <br/>
-</c:forEach>
+</c:forEach></table>
 <p class="btn-link">
 </p>
 </div>

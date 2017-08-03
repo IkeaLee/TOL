@@ -91,7 +91,7 @@
                 <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexL.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.jsp">我的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="active" href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet1">文件大全</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地习题</a></li>
             </ul>

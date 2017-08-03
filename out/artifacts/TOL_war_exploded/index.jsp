@@ -191,28 +191,38 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
- <form action="${pageContext.request.contextPath}/servlet/UploadHandleServlet" enctype="multipart/form-data" method="post" class="elegant-aero">
-  <input type="hidden" name="username" value="${username}"><br/>
-  上传文件：<input type="file" name="file1"><br/>
-  <input type="submit" value="提交">
+ <form action="${pageContext.request.contextPath}/servlet/UploadHandleServlet" enctype="multipart/form-data" method="post" class="elegant-aero">	
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <table align="center">
+    <tr><td><p>上传文件：
+      </p>
+      <p>
+        <input type="file" name="file1">
+  </p></td></tr>
+  	<tr><td><p>&nbsp;</p>
+  	    <p>
+  	      <input type="submit" value="提交">
+    </p>
+  	    <p>&nbsp;</p></td></tr>
+  
+</table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
  </form>
 <div class="footer-area">
             <div class="container">
-                <div class="row footer">
-                    
-                    <div class="col-md-4">
-                      
-                        </div>
-                    </div>
+                <div class="row footer"></div>
                    
-                </div>
+  </div>
                 <div class="row footer-copy">
                     <p><span><center>
                       Powered by Team13, All rights reserved
                     </center> 
                     </span></p>
                 </div>
-            </div>
+</div>
         </div>
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>

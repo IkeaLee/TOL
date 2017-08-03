@@ -180,39 +180,49 @@
                     }
                 %>
                 欢迎您，<span style="color: #00AEEF;">${username}</span>老师！
-                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
+                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileT.jsp" style="color: #d9edf7">个人中心</a></button>
               </div>
               <ul class="main-nav nav navbar-nav navbar-right">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexTeacher.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.jsp">待回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredQuestion.jsp">已回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a  class="active" href="/servlet/ListFileServlet">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredquestion.jsp">已回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a  class="active" href="servlet/ListFileServlet">文件大全</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
- <form action="${pageContext.request.contextPath}/servlet/UploadHandleServlet" enctype="multipart/form-data" method="post" class="elegant-aero">
-  <input type="hidden" name="username" value="${username}"><br/>
-  上传文件：<input type="file" name="file1"><br/>
-  <input type="submit" value="提交">
+ <form action="${pageContext.request.contextPath}/servlet/UploadHandleServlet" enctype="multipart/form-data" method="post" class="elegant-aero">	
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <table align="center">
+    <tr><td><p>上传文件：
+      </p>
+      <p>
+        <input type="file" name="file1">
+  </p></td></tr>
+  	<tr><td><p>&nbsp;</p>
+  	    <p>
+  	      <input type="submit" value="提交">
+    </p>
+  	    <p>&nbsp;</p></td></tr>
+  
+</table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
  </form>
 <div class="footer-area">
             <div class="container">
-                <div class="row footer">
-                    
-                    <div class="col-md-4">
-                      
-                        </div>
-                    </div>
+                <div class="row footer"></div>
                    
-                </div>
+  </div>
                 <div class="row footer-copy">
                     <p><span><center>
                       Powered by Team13, All rights reserved
                     </center> 
                     </span></p>
                 </div>
-            </div>
+</div>
         </div>
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
