@@ -21,12 +21,16 @@ public class questionSubServlet extends HttpServlet {
         String gradeage = request.getParameter("gra");
         String submituser = request.getParameter("usr");
         QuestionInfoDao dao = new QuestionInfoDao();
-        if(dao.InsertQuestion(content,submituser,Integer.parseInt(gradeage),subject)==0){
+        if(content==null){
             response.sendRedirect("askquestion.jsp");
         }
-        else{
-            dao.SubtimeAdd(submituser);
-            request.getRequestDispatcher("askSuccess.jsp").forward(request,response);
+        else {
+            if (dao.InsertQuestion(content, submituser, Integer.parseInt(gradeage), subject) == 0) {
+                response.sendRedirect("askquestion.jsp");
+            } else {
+                dao.SubtimeAdd(submituser);
+                request.getRequestDispatcher("askSuccess.jsp").forward(request, response);
+            }
         }
     }
 

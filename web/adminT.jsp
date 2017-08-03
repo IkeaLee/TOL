@@ -47,7 +47,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="indexTeacher.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
     </div></nav>

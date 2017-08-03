@@ -21,6 +21,14 @@
         <url-pattern>/servlet/UploadHandleServlet</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>ListFileServlet1</servlet-name>
+        <servlet-class>servlet.ListFileServlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListFileServlet1</servlet-name>
+        <url-pattern>/servlet/ListFileServlet1</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>ListFileServlet</servlet-name>
         <servlet-class>servlet.ListFileServlet</servlet-class>
     </servlet>

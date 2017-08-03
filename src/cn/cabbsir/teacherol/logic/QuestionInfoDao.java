@@ -240,6 +240,7 @@ public class QuestionInfoDao {
                 question=new QuestionInfo();
                 question.setId(Integer.parseInt(id));
                 question.setSubmitUser(rs.getString("submituser"));
+                question.setGradeAge(rs.getInt("gradeage"));
                 question.setContent(rs.getString("content"));
                 question.setAnswerUser(rs.getString("answeruser"));
                 question.setAnswer(rs.getString("answer"));

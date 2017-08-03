@@ -62,7 +62,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,11 +74,11 @@
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="index.html">首页</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.html">我的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.html">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.html">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.html">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.html">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="">我的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="">问题中心</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="">课后留言板</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="">各地习题</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

@@ -85,7 +85,7 @@
             }
         }
         function grade() {
-            if(Number(document.form2.age.value)>=9||Number(document.form2.age.value)<1){
+            if(Number(document.form2.age.value)>9||Number(document.form2.age.value)<1){
                 document.getElementById("grade1").innerHTML="<font color='red'>请输入1-9的数字</font>";
                 return false;
             }

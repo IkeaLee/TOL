@@ -144,11 +144,14 @@
             <div class="button navbar-right">
                 <%
                     QuestionInfo question = (QuestionInfo) session.getAttribute("selectquestion");
+                    UserInfo u = (UserInfo) session.getAttribute("loginuser") ;
                     String username = null;
+                    String name = null;
                     String content=null;
                     String answer = null;
                     String answeruser = null;
                     if(question!=null) {
+                        name = u.getUsername();
                         username = question.getSubmitUser();
                         content = question.getContent();
                         answer = question.getAnswer();
@@ -156,19 +159,20 @@
                         pageContext.setAttribute("content", content);
                         pageContext.setAttribute("username", username);
                         pageContext.setAttribute("answer", answer);
+                        pageContext.setAttribute("name",name);
                         pageContext.setAttribute("answeruser", answeruser);
                     }
                 %>
-                欢迎您，<span style="color: #00ADEF">${username}</span> 同学</span>
+                欢迎您，<span style="color: #00ADEF">${name}</span> 同学</span>
                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a href="index.html">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.jsp">我的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="active" href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地试题</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -183,13 +187,13 @@
         <tr>
             <th height="189" scope="row">提问者</th>
             <td>${username}</td>
-            <td><textarea style="width:100%; height:100%;background:transparent;border-style:none;" readonly="readonly">${content}</textarea></td>
+            <td><textarea rows="12" readonly style="width:100%; height:100%;background:transparent;border-style:none;">${content}</textarea></td>
 
-        </tr>
+      </tr>
         <tr>
-            <th height="248" scope="row">回答教师</th>
+            <th height="279" scope="row">回答教师</th>
             <td>${answeruser}</td>
-            <td><textarea style="width:100%; height:100%; background:transparent; border-style:none ;" readonly="readonly">${answer}</textarea></td>
+            <td><textarea rows="15" readonly style="width:100%; height:100%; background:transparent; border-style:none ;">${answer}</textarea></td>
 
         </tr>
     </table>

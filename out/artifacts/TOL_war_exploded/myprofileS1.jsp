@@ -75,7 +75,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="indexL.jsp"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href=""><img src="img/logo.png" alt=""></a>
         </div>
 
     </div></nav>

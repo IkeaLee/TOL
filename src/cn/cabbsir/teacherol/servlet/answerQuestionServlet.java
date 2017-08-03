@@ -18,7 +18,7 @@ public class answerQuestionServlet extends HttpServlet {
         String answeruser = request.getParameter("ansusr");
         String id = request.getParameter("no");
         QuestionInfoDao dao = new QuestionInfoDao();
-        if(dao.InsertAnswer(answer,answeruser,Integer.parseInt(id))==0){
+        if(dao.InsertAnswer(answer,answeruser,Integer.parseInt(id))==0||answer==null){
             //测试代码
             System.out.println("插入失败"+id+answer+""+answeruser);
             response.sendRedirect("answerquestion.jsp");

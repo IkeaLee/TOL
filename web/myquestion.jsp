@@ -84,9 +84,9 @@
                 <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexL.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="active" href="myquestion.jsp">我的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="/servlet/ListFileServlet1">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地试题</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -109,7 +109,7 @@
                 <table class="table">
                     <c:forEach items="${questions}" var="q">
                     <tr class="odd wow fadeInUp" data-wow-delay="1s">
-                        <td width="51%" class="tbl-title"><h4>${q.id}<br><span class="job-type">${q.subject}</span></h4></td>
+                        <td width="51%" class="tbl-title"><h4>题号${q.id}<br><span class="job-type">${q.subject}</span></h4></td>
                         <td width="17%"><p>题目水平：${q.gradeAge}</p></td>
                         <td width="12%"><p>解答教师：${q.answerUser}</p></td>
                         <td width="8%" class="tbl-apply"><a href="questionDSServlet?id=${q.id}">详情</a></td>

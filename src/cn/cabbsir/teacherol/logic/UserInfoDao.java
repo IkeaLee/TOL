@@ -440,7 +440,6 @@ public class UserInfoDao {
                 user.setTeachingArea(rs.getString("teachingarea"));
                 user.setArea(rs.getString("area"));
                 user.setFinishTimes(rs.getInt("finishtimes"));
-                user.setScore(rs.getInt("score"));
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -487,8 +486,6 @@ public class UserInfoDao {
                 user.setGrade(rs.getInt("grade"));
                 user.setSubTimes(rs.getInt("submitimes"));
                 user.setArea(rs.getString("area"));
-                user.setSignTimes(rs.getInt("signtimes"));
-                user.setScore(rs.getInt("score"));
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

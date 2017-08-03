@@ -33,6 +33,89 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+            <style>
+
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 80%;    
+}
+
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc; 
+    -moz-box-shadow: 0 1px 1px #ccc; 
+    box-shadow: 0 1px 1px #ccc;         
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;     
+}    
+    
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;    
+}
+
+.bordered th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+</style>
 </head>
 <body>
 
@@ -45,8 +128,7 @@
             <div class="col-md-5 col-sm-8 col-xs-8">
                 <div class="header-half header-call">
                     <p>
-                        <span><i class="icon-cloud"></i>+86 130-0986-2939</span>
-                        <span><i class="icon-mail"></i>deltasandman@163.com</span>
+                        <span>Powered by Sandman,CabbSir,GeorgeChen7</span>
                     </p>
                 </div>
             </div>
@@ -79,53 +161,42 @@
                 <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexL.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.jsp">我的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet1">文件大全</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.4s"><a class="active" href="messageboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地习题</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-</nav>
+</nav> 
+<center><img src="img/title.jpg"/></center>
 <p>&nbsp;</p>
-<div class="row jobs">
     
-  <table width="1049" height="347" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="792" height="225"><div class="col-md-9">
-        <div class="job-posts table-responsive">
-            <table width="85%" class="table">
+  
+            <center><table width="96%"  class="bordered">
                 <tr>
-                    <td>留言内容</td><td>提交者</td>
+                    <td width="79%">留言内容</td>
+                    <td width="21%">提交者</td>
                 </tr>
                 <c:forEach items="${m}" var="m">
-                    <tr class="odd wow fadeInUp" data-wow-delay="1s">
-                        <td width="66%" class="tbl-title"><h4 align="left">${m.message}</h4></td>
-                        <td width="34%"><p align="right">${m.submituser}</p></td>
+                    <tr>
+                        <td>${m.message}</td>
+                        <td>${m.submituser}</td>
                     </tr>
                 </c:forEach>
-            </table>
+            </table></center>
 
         </div>
 
-    </div></td><form name="mesform" action="submessageServlet" method="post">
-        <td width="257"><p>
+    <hr>
+			<form name="mesform" action="submessageServlet" method="post">
+    <p>
           <textarea name="message" cols="40" rows="5" class="btn-info" id="text"></textarea>
           <br>
         </p>
           <p>
               <input type="hidden" name="username" value="${username}">
-            <input type="submit"  value="留言">
-          </p>
-        </td></form>
-      </tr>
-    </table>
-
-
-<span>
-
-    </span>
-<p><br>
-</p>
+            <input type="submit"  value="留言"><input type="reset"  value="重置">
+          </p></form>
 <div class="footer-area">
     <div class="container">
         <div class="row footer"></div>

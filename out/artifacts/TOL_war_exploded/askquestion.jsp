@@ -35,7 +35,7 @@
         .elegant-aero {
             margin-left:auto;
             margin-right:auto;
-            max-width: 80%;
+            max-width: 100%;
             background: #D2E9FF;
             padding: 20px 20px 20px 20px;
             font: 12px Arial, Helvetica, sans-serif;
@@ -99,7 +99,7 @@
             -moz-appearance: none;
             text-indent: 0.01px;
             text-overflow: '';
-            width: 20%;
+            width: 40%;
         }
         .elegant-aero input[type="submit"]{
             padding: 10px 30px 10px 30px;
@@ -112,6 +112,19 @@
             text-shadow: 1px 1px 1px #5079A3;
         }
         .elegant-aero input[type="submit"]:hover{
+            background: #3EB1DD;
+        }
+		.elegant-aero input[type="reset"]{
+            padding: 10px 30px 10px 30px;
+            background: #66C1E4;
+            border: none;
+            color: #FFF;
+            box-shadow: 1px 1px 1px #4C6E91;
+            -webkit-box-shadow: 1px 1px 1px #4C6E91;
+            -moz-box-shadow: 1px 1px 1px #4C6E91;
+            text-shadow: 1px 1px 1px #5079A3;
+        }
+        .elegant-aero input[type="reset"]:hover{
             background: #3EB1DD;
         }
         .elegant-aero .button{
@@ -193,10 +206,10 @@
 
             <h2 align="center">在线提问</h2><br>
       </div>
-        <div class="row how-it-work text-center"><table align="center">
+        <div class="row how-it-work text-center"><table class="elegant-aero">
             <tr>
-                <td><div >
-                    <select name="sub" size="1" align="right">
+                <td width="255"><div >
+                    <select name="sub" align="right">
                         <option value="null" selected="selected">请选择科目   </option>
                         <option value="math">数学       </option>
                         <option value="chinese">语文        </option>
@@ -207,7 +220,7 @@
                     </select>
                 </div>
                 </td>
-                <td>
+                <td width="349">
                     <select name="gra" align="left">
                         <option value="0" selected="selected">请选择年级   </option>
                         <option value="1">一年级     </option>
@@ -227,7 +240,7 @@
             </tr>
             <tr>
                 <td colspan="2"><label for="textarea"></label>
-                    <textarea name="textarea" cols="100" rows="20" id="textarea">在这里输入问题详情</textarea></td>
+                    <textarea name="textarea" cols="100" rows="20" id="textarea" placeholder="在这里输入问题详情"></textarea></td>
             </tr>
             <tr>
                 <td>&nbsp;</td><td>&nbsp;</td>

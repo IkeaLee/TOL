@@ -80,20 +80,21 @@
                     Integer a = (Integer) session.getAttribute("all");
                     String username = null;
                     if(u!=null){
+                        int qu=u.getFinishTimes();
                         username = u.getUsername();
                         pageContext.setAttribute("all",a);
                         pageContext.setAttribute("username",username);
-                        pageContext.setAttribute("number",q);
+                        pageContext.setAttribute("number",qu);
                     }
                 %>
                 欢迎您，<span style="color: #00ADEF">${username}</span> 老师</span>
                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexTeacher.jsp">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a  href="indexTeacher.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.jsp">待回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredquestion.jsp">已回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezoneT.jsp">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="active"  href="answeredquestion.jsp">已回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet">文件大全</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

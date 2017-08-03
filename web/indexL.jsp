@@ -83,9 +83,9 @@
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexL.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.jsp">我的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet1">文件大全</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地习题</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -146,116 +146,111 @@
         </div>
     </div>
     <div class="container">
-        <div class="row job-posting wow fadeInUp" data-wow-delay="1s">
-            <div role="tabpanel">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#job-seekers" aria-controls="home" role="tab" data-toggle="tab">当前在线老师</a></li>
-                </ul>
+                <div class="row job-posting wow fadeInUp" data-wow-delay="1s">
+                    <div role="tabpanel">
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#job-seekers" aria-controls="home" role="tab" data-toggle="tab">当前在线老师</a></li>
+                      </ul>
 
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="job-seekers">
-                        <ul class="list-inline job-seeker">
-                            <li>
-                                <a href="">
-                                    <img src="img/team-small-5.jpg" alt="">
-                                    <div class="overlay"><h3>奥哈杜尔·伊什拉姆</h3><p>恐怖袭击学博士</p></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="img/team-small-6.jpg" alt="">
-                                    <div class="overlay"><h3>莫伊哈比·穆罕默德</h3><p>清真食品烹饪专家</p></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="img/team-small-3.jpg" alt="">
-                                    <div class="overlay"><h3>李老师</h3><p>与穆斯林交流专家</p></div>
-                                </a>
-                            </li>
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="job-seekers">
+                            <ul class="list-inline job-seeker">
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-5.jpg" alt="">
+                                        <div class="overlay"><h3>刘能</h3><p>中学高级化学教师</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-6.jpg" alt="">
+                                        <div class="overlay"><h3>张洪澜</h3><p>中学生物教师</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-3.jpg" alt="">
+                                        <div class="overlay"><h3>胡颖</h3><p>特级英语教师</p></div>
+                                    </a>
+                                </li>
+                               
+                              <li>
+                                    <a href="">
+                                        <img src="img/team-small-4.jpg" alt="">
+                                        <div class="overlay"><h3>王延文</h3><p>优秀物理教师</p></div>
+                                    </a>
+                                </li>
+                           
+                              <li>
+                                    <a href="">
+                                        <img src="img/team-small-2.jpg" alt="">
+                                        <div class="overlay"><h3>庄杰</h3><p>数学竞赛优秀教练员</p></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="img/team-small-1.jpg" alt="">
+                                        <div class="overlay"><h3>刘艳华</h3><p>“首席语文教师”</p></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                      
+                      </div>
 
-                            <li>
-                                <a href="">
-                                    <img src="img/team-small-4.jpg" alt="">
-                                    <div class="overlay"><h3>艾弗塔克·阿兰</h3><p>资深阿訇</p></div>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="">
-                                    <img src="img/team-small-2.jpg" alt="">
-                                    <div class="overlay"><h3>马克·奥托</h3><p>温和穆斯林领导者</p></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="img/team-small-1.jpg" alt="">
-                                    <div class="overlay"><h3>蕾瑟尔·阿姆德</h3><p>“未来的哈里发”</p></div>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
-
                 </div>
-
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row page-title text-center  wow bounce"  data-wow-delay=".7s">
-            <h5>留言板</h5>
-            <h2>同学们都在说什么</h2>
-        </div>
-        <div class="row testimonial">
-            <div class="col-md-12">
-                <div id="testimonial-slider">
-                    <div class="item">
-                        <div class="client-text">
-                            <p>Jobify offer an amazing service and I couldn’t be happier! They
-                                are dedicated to helping recruiters find great candidates, wonderful service!</p>
-                            <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
-                        </div>
-                        <div class="client-face wow fadeInRight" data-wow-delay=".9s">
-                            <img src="img/client-face1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-text">
-                            <p>Jobify offer an amazing service and I couldn’t be happier! They
-                                are dedicated to helping recruiters find great candidates, wonderful service!</p>
-                            <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
-                        </div>
-                        <div class="client-face">
-                            <img src="img/client-face2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-text">
-                            <p>Jobify offer an amazing service and I couldn’t be happier! They
-                                are dedicated to helping recruiters find great candidates, wonderful service!</p>
-                            <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
-                        </div>
-                        <div class="client-face">
-                            <img src="img/client-face1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="client-text">
-                            <p>Jobify offer an amazing service and I couldn’t be happier! They
-                                are dedicated to helping recruiters find great candidates, wonderful service!</p>
-                            <h4><strong>Ohidul Islam, </strong><i>Web Designer</i></h4>
-                        </div>
-                        <div class="client-face">
-                            <img src="img/client-face2.png" alt="">
+            <div class="container">
+              <div class="row page-title text-center  wow bounce"  data-wow-delay=".7s">
+                    <h5>留言板</h5>
+                    <h2>同学们都在说什么</h2>
+                </div>
+                <div class="row testimonial">
+                    <div class="col-md-12">
+                        <div id="testimonial-slider">
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>这个平台让我找到了很多曾经不会的题，也让我的很多不会的题得到了解答，真是太有用了！</p>
+                                    <h4><strong>谢广坤</strong></h4>
+                                </div>
+                                <div class="client-face wow fadeInRight" data-wow-delay=".9s"> 
+                                    <img src="img/client-face1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>自从用了这个平台，我的很多难题迎刃而解，成绩也得到了提升，感谢名师在线!</p>
+                                    <h4><strong>王天来</strong></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>名师在线平台的确是我们学生的好帮手，它让优等生更加优秀，让成绩较差的同学也能获得进步。</p>
+                                    <h4><strong>熊轩昂</strong></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="client-text">                                
+                                    <p>希望名师在线平台以后能够推出更多方便老师，方便同学的功能！</p>
+                                    <h4><strong>李宇轩</strong></h4>
+                                </div>
+                                <div class="client-face">
+                                    <img src="img/client-face2.png" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
 </div>
 <div class="footer-area">
     <div class="container">
