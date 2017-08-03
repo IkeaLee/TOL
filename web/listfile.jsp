@@ -132,7 +132,7 @@ table {
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               
-              <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+              <a class="navbar-brand" href="indexTeacher.jsp"><img src="img/logo.png" alt=""></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -170,7 +170,7 @@ table {
 <br/>
 </c:forEach>
  <p class="btn-link">
-  <a href="index.jsp"> <button>我要上传</button></a>
+  <a href="../index.jsp"> <button>我要上传</button></a>
       </p>
       </div>
  <div class="footer-area">
@@ -184,7 +184,7 @@ table {
                    
                 </div>
                 <div class="row footer-copy">
-                    <p><center><span>(C)Sandman Technology, All rights reserved</span></center> </p>
+                    <p><center><span>Powered by Team13, All rights reserved</span></center> </p>
                 </div>
             </div>
         </div>
@@ -195,4 +195,4 @@ table {
         <script src="js/wow.js"></script>
         <script src="js/main.js"></script>
     </body>
-</html>
+    </body></html>

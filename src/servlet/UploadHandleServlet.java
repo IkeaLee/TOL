@@ -18,7 +18,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
- ??????
+ 制作人：陈茁
  */
 public class UploadHandleServlet extends HttpServlet {
 
@@ -34,12 +34,12 @@ public class UploadHandleServlet extends HttpServlet {
   String message = "";
   try{
    DiskFileItemFactory factory = new DiskFileItemFactory();
-   factory.setSizeThreshold(1024*100);//?????????100KB??????????????????10KB
+   factory.setSizeThreshold(1024*100);//设置缓冲区的大小为100KB，如果不指定，那么缓冲区的大小默认是10KB
    factory.setRepository(tmpFile);
    ServletFileUpload upload = new ServletFileUpload(factory);
    upload.setProgressListener(new ProgressListener(){
     public void update(long pBytesRead, long pContentLength, int arg2) {
-     System.out.println("??????" + pContentLength + ",??????" + pBytesRead);
+     System.out.println("文件大小为：" + pContentLength + ",当前已处理：" + pBytesRead);
 
     }
    });
@@ -48,15 +48,15 @@ public class UploadHandleServlet extends HttpServlet {
     return;
    }
 
-   //??????????????????????1024*1024??????1MB
+   //设置上传单个文件的大小的最大值，目前是设置为1024*1024字节，也就是1MB
    upload.setFileSizeMax(1024*1024);
-   //????????????????=????????????????????????10MB
+   //设置上传文件总量的最大值，最大值=同时上传的多个文件的大小的最大值的和，目前设置为10MB
    upload.setSizeMax(1024*1024*10);
    List<FileItem> list = upload.parseRequest(request);
    for(FileItem item : list){
     if(item.isFormField()){
      String name = item.getFieldName();
-     //?????????????????
+     //解决普通输入项的数据的中文乱码问题
      String value = item.getString("UTF-8");
      value = new String(value.getBytes("iso8859-1"),"UTF-8");
      System.out.println(name + "=" + value);
@@ -69,7 +69,7 @@ public class UploadHandleServlet extends HttpServlet {
 
      filename = filename.substring(filename.lastIndexOf("\\")+1);
      String fileExtName = filename.substring(filename.lastIndexOf(".")+1);
-     System.out.println("???????????"+fileExtName);
+     System.out.println("上传的文件的扩展名是："+fileExtName);
      InputStream in = item.getInputStream();
      String saveFilename = makeFileName(filename);
      String realSavePath = makePath(saveFilename, savePath);
@@ -81,21 +81,21 @@ public class UploadHandleServlet extends HttpServlet {
      }
      in.close();
      out.close();
-     item.delete();        message = "???????";
+     item.delete();        message = "文件上传成功！";
     }
    }
   }catch (FileUploadBase.FileSizeLimitExceededException e) {
    e.printStackTrace();
-   request.setAttribute("message", "????????????");
+   request.setAttribute("message", "单个文件超出最大值！！！");
    request.getRequestDispatcher("/message.jsp").forward(request, response);
    return;
   }catch (FileUploadBase.SizeLimitExceededException e) {
    e.printStackTrace();
-   request.setAttribute("message", "????????????????????");
+   request.setAttribute("message", "上传文件的总的大小超出限制的最大值！！！");
    request.getRequestDispatcher("/message.jsp").forward(request, response);
    return;
   }catch (Exception e) {
-   message= "???????";
+   message= "文件上传失败！";
    e.printStackTrace();
   }
   request.setAttribute("message",message);
@@ -108,7 +108,7 @@ public class UploadHandleServlet extends HttpServlet {
  }
 
  private String makePath(String filename,String savePath){
-  //??????hashCode????????filename??????????????
+  //得到文件名的hashCode的值，得到的就是filename这个字符串对象在内存中的地址
   int hashcode = filename.hashCode();
   int dir1 = hashcode&0xf; //0--15
   int dir2 = (hashcode&0xf0)>>4; //0-15
