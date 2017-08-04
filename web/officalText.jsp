@@ -108,6 +108,9 @@
 <div class="container">
     <div class="row page-title text-center wow bounce"  data-wow-delay=".5s">
         <h2>本系统每日从题库自动更新试题，以下为今日内容</h2>
+        <form action="getpicServlet">
+            <button class="btn"><a href="getpicServlet">点击刷新</a></button>
+        </form>
     </div>
     <div class="row page-title text-center  wow bounce"  data-wow-delay=".7s">
         <h2><img src="img/getpic/14.png" width="557" height="786"><img src="img/getpic/15.png" width="545" height="774"><img src="img/getpic/16.png" width="544" height="789"><img src="img/getpic/17.png" width="528" height="785"><img src="img/getpic/18.png" width="541" height="776"><img src="img/getpic/19.png" width="549" height="764"><img src="img/getpic/20.png" width="525" height="744"><img src="img/getpic/1.png" width="635" height="878"><img src="img/getpic/2.png" width="640" height="878"><img src="img/getpic/3.png" width="651" height="885"><img src="img/getpic/4.png" width="639" height="893"><img src="img/getpic/5.png" width="641" height="889"><img src="img/getpic/6.png" width="708" height="931"><img src="img/getpic/7.png" width="507" height="723"><img src="img/getpic/8.png" width="517" height="731"><img src="img/getpic/9.png" width="533" height="731"><img src="img/getpic/11.png" width="543" height="801"><img src="img/getpic/12.png" width="539" height="775"><img src="img/getpic/13.png" width="519" height="787"></h2>
