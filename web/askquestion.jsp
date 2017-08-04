@@ -186,12 +186,12 @@
                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="lr/index.html" style="color: #d9edf7">个人中心</a></button>
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a href="index.html">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexL.jsp">首页</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="active" href="myquestion.jsp">我的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="filezone.jsp">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="msgboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="daysign.jsp">每日签到</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet1">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地试题</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

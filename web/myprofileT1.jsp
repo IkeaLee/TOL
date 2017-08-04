@@ -145,14 +145,14 @@
                             <label class="control-label" for="email">电子邮件</label>
                             <div class="controls">
                                 <span style="color: #00AEEF">${email}</span><br>
-                                <input type="text" class="input-xlarge" id="email" name="email" value="请输入新的邮箱地址" />
+                                <input type="text" class="input-xlarge" id="email" name="email" value="${email}" />
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="password">密码</label>
                             <div class="controls">
                                 <span STYLE="color: #00AEEF">${password}</span><br>
-                                <input type="text" class="input-xlarge" name="password" id="password" value="请输入新的密码" />
+                                <input type="text" class="input-xlarge" name="password" id="password" value="${password}" />
                             </div>
                         </div>
                         <div class="control-group">
@@ -207,7 +207,7 @@
                             <label class="control-label" >教龄</label>
                             <div class="controls"><span style="color: #00AEEF;">${teachingAge}</span> </div>
                             <div class="controls">
-                                <input name="age" value = "请输入1-40数字">
+                                <input name="age" value = "${teachingAge}">
                             </div>
                         </div>
                         <div class="form-actions">

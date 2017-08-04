@@ -3,12 +3,14 @@ package cn.cabbsir.teacherol.servlet;
 import cn.cabbsir.teacherol.entity.QuestionInfo;
 import cn.cabbsir.teacherol.entity.UserInfo;
 import cn.cabbsir.teacherol.logic.QuestionInfoDao;
+import cn.cabbsir.teacherol.logic.UserInfoDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "questionSubServlet",urlPatterns = "/questionSubServlet")
@@ -21,6 +23,7 @@ public class questionSubServlet extends HttpServlet {
         String gradeage = request.getParameter("gra");
         String submituser = request.getParameter("usr");
         QuestionInfoDao dao = new QuestionInfoDao();
+        UserInfoDao udao = new UserInfoDao();
         if(content==null){
             response.sendRedirect("askquestion.jsp");
         }
@@ -29,6 +32,8 @@ public class questionSubServlet extends HttpServlet {
                 response.sendRedirect("askquestion.jsp");
             } else {
                 dao.SubtimeAdd(submituser);
+                HttpSession session = request.getSession();
+                session.setAttribute("loginuser",udao.SelectSName(submituser));
                 request.getRequestDispatcher("askSuccess.jsp").forward(request, response);
             }
         }

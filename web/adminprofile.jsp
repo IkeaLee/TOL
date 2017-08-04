@@ -110,7 +110,7 @@
 
         </div>
         <div class="row footer-copy">
-            <p><span><center>(C)Sandman Technology, All rights reserved</center></span> </p>
+            <p><span><center>Powered by Team13, All rights reserved</center></span> </p>
         </div>
     </div>
     </footer>

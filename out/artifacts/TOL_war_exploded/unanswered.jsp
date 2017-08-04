@@ -97,7 +97,7 @@
 <div class="container">
     <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
         <h5>问题中心</h5>
-        <h2>此次登陆共有<span style="color: orangered">${num}道题</span>等待您去解答</h2>(每次登陆刷新数据)
+        <h2>当前共有<span style="color: orangered">${num}道题</span>等待您去解答</h2>
     </div>
     <div class="row jobs">
         <div class="col-md-9">

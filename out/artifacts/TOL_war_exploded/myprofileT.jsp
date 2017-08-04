@@ -75,7 +75,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="indexL.jsp"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="indexTeacher.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
     </div></nav>
@@ -145,14 +145,14 @@
                             <label class="control-label" for="email">电子邮件</label>
                             <div class="controls">
                                 <span style="color: #00AEEF">${email}</span><br>
-                                <input type="text" class="input-xlarge" id="email" name="email" value="请输入新的邮箱地址" />
+                                <input type="text" class="input-xlarge" id="email" name="email" value="${email}" />
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="password">密码</label>
                             <div class="controls">
                                 <span STYLE="color: #00AEEF">${password}</span><br>
-                                <input type="text" class="input-xlarge" name="password" id="password" value="请输入新的密码" />
+                                <input type="text" class="input-xlarge" name="password" id="password" value="${password}" />
                             </div>
                         </div>
                         <div class="control-group">

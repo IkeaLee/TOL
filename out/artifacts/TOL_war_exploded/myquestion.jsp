@@ -69,12 +69,12 @@
                 <%
                     UserInfo u = (UserInfo) session.getAttribute("loginuser");
                     String username = null;
-                    int subtimes=0;
+                    int submit= 0;
                     if(u!=null){
                         username = u.getUsername();
-                        subtimes = u.getSubTimes();
+                        submit = u.getSubTimes();
                         pageContext.setAttribute("username",username);
-                        pageContext.setAttribute("subtimes",subtimes);
+                        pageContext.setAttribute("subtimes",submit);
                     }
                 %>
                 欢迎您，<span style="color: #00ADEF">${username}</span> 同学</span>
@@ -95,7 +95,7 @@
 <div class="container">
     <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
         <h5>我的问题</h5>
-        <h2>您本次登陆系统前已经在本站提交了<span style="color:orangered;">${subtimes}</span>道难题，祝学习进步！</h2>
+        <h2>您已经在本站提交了<span style="color:orangered;">${subtimes}</span>道难题，祝学习进步！</h2>
     </div>
     <form action="questionSelectSServlet" method="post">
         <input type="radio" name="mem" value="Y">查看已解决
@@ -107,7 +107,7 @@
         <div class="col-md-9">
             <div class="job-posts table-responsive">
                 <table class="table">
-                    <c:forEach items="${questions}" var="q">
+                    <c:forEach items="${quest}" var="q">
                     <tr class="odd wow fadeInUp" data-wow-delay="1s">
                         <td width="51%" class="tbl-title"><h4>题号${q.id}<br><span class="job-type">${q.subject}</span></h4></td>
                         <td width="17%"><p>题目水平：${q.gradeAge}</p></td>

@@ -106,7 +106,7 @@
                 <h2>足不出户，在线答疑</h2>
                 <p>在线解答学生们提出的问题，为您减轻教学负担！</p>
                 <p><span class=" form-inline">
-                          <input href="answerquestion.jsp" type="button" class="btn" value="在线答疑">
+                    <button class="btn"><a href="unanswered.jsp">在线答疑</a></button>
                         </span></p>
 
             </div>
@@ -121,24 +121,24 @@
         </div>
         <div class="row how-it-work text-center">
             <div class="col-md-4">
-                <div class="single-work wow fadeInUp" data-wow-delay="0.8s"><a href="askquestion.html">
+                <div class="single-work wow fadeInUp" data-wow-delay="0.8s"><a href="unanswered.jsp">
                     <img src="img/how-work1.png" alt="">
                     <h3>在线答疑</h3>
                     <p>学生问题一键解答，海量积分轻松到手，丰富教学计划和经验的利器</p></a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s"><a href="filezone.html">
+                <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s"><a href="servlet/ListFileServlet">
                     <img src="img/how-work2.png" alt="">
                     <h3>文件中心</h3>
                     <p>讲课视频、名校试题、学生答案，一网打尽，无限下载！</p></a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="single-work wow fadeInUp"  data-wow-delay="1s">
+                <div class="single-work wow fadeInUp"  data-wow-delay="1s"><a href="unanswered.jsp">
                     <img src="img/how-work3.png" alt="">
                     <h3>针对性推题</h3>
-                    <p>我们会针对您注册时填写的学科信息，精准推荐试题回答</p>
+                    <p>我们会针对您注册时填写的学科信息，精准推荐试题回答</p></a>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
                             <div class="item">
                                 <div class="client-text">                                
                                     <p>这个平台让我找到了很多曾经不会的题，也让我的很多不会的题得到了解答，真是太有用了！</p>
-                                    <h4><strong>谢广坤</strong></h4>
+                                    <h4><strong>xie</strong></h4>
                                 </div>
                                 <div class="client-face wow fadeInRight" data-wow-delay=".9s"> 
                                     <img src="img/client-face1.png" alt="">
@@ -221,7 +221,7 @@
                             <div class="item">
                                 <div class="client-text">                                
                                     <p>自从用了这个平台，我的很多难题迎刃而解，成绩也得到了提升，感谢名师在线!</p>
-                                    <h4><strong>王天来</strong></h4>
+                                    <h4><strong>wang</strong></h4>
                                 </div>
                                 <div class="client-face">
                                     <img src="img/client-face2.png" alt="">
@@ -230,7 +230,7 @@
                             <div class="item">
                                 <div class="client-text">                                
                                     <p>名师在线平台的确是我们学生的好帮手，它让优等生更加优秀，让成绩较差的同学也能获得进步。</p>
-                                    <h4><strong>熊轩昂</strong></h4>
+                                    <h4><strong>xiong</strong></h4>
                                 </div>
                                 <div class="client-face">
                                     <img src="img/client-face1.png" alt="">
@@ -239,7 +239,7 @@
                             <div class="item">
                                 <div class="client-text">                                
                                     <p>希望名师在线平台以后能够推出更多方便老师，方便同学的功能！</p>
-                                    <h4><strong>李宇轩</strong></h4>
+                                    <h4><strong>li</strong></h4>
                                 </div>
                                 <div class="client-face">
                                     <img src="img/client-face2.png" alt="">

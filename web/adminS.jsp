@@ -1,6 +1,5 @@
 
 <%@ page import="cn.cabbsir.teacherol.entity.AreaInfo" %>
-<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.
@@ -47,7 +46,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="indexL.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
     </div></nav>

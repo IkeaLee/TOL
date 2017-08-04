@@ -31,7 +31,7 @@ public class questionSelectSServlet extends HttpServlet {
             System.out.println("选择未解答"+username);
             questions = dao.SelectSN(username);
         }
-        request.setAttribute("questions",questions);
+        request.setAttribute("quest",questions);
         request.getRequestDispatcher("myquestion.jsp").forward(request,response);
     }
 

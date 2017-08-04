@@ -62,23 +62,20 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="indexTeacher.jsp"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="button navbar-right">
 
-                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="login.jsp" style="color: #d9edf7">已有账号？去登陆</a></button>
 
             </div>
             <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="indexL.jsp">首页</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="myquestion.jsp">我的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="questioncenter.jsp">问题中心</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexTeacher.jsp">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="active" href="unanswered.jsp">待回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredquestion.jsp">已回答的问题</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="servlet/ListFileServlet">文件大全</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="messageboard.jsp">课后留言板</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="officalText.jsp">各地试题</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

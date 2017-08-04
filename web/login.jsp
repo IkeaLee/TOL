@@ -83,7 +83,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
-            <a class="navbar-brand" href=""><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -108,7 +108,9 @@
     <div class="container">
       <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
         <h2 align="center">欢迎登陆本系统</h2>
-          <form name="form1" method="post" action="loginservlet" onsubmit="password()&&username()">
+        <p align="center">&nbsp;</p>
+        <p align="center">&nbsp;</p>
+        <form name="form1" method="post" action="loginservlet" onsubmit="password()&&username()">
           <table width="477" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
                 <td>请选择您的身份<br>            </td>
@@ -127,7 +129,7 @@
                     
                     <label> 
                       <input type="radio" name="member" value="a" id="member_2">
-                      管理员</label>
+                      管理员                    </label>
                     
                 </td>
                 <td>&nbsp;</td>

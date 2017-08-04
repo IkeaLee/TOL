@@ -1,5 +1,6 @@
+<%@ page import="cn.cabbsir.teacherol.entity.UserInfo" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+         pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%String bathPath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/";%>
 <!DOCTYPE HTML>
@@ -139,14 +140,22 @@ table {
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="button navbar-right">欢迎，<span>老师！</span>
+                <%
+                    UserInfo u = (UserInfo) session.getAttribute("loginuser");
+                    String username = null;
+                    if(u!=null){
+                        username = u.getUsername();
+                        pageContext.setAttribute("username",username);
+                    }
+                %>
+                欢迎您，<span style="color: #00AEEF;">${username}</span>老师！
                  <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"><a href="myprofileT.html" style="color: #d9edf7">个人中心</a></button>
-              </div>
+            </div>
               <ul class="main-nav nav navbar-nav navbar-right">
-                <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexTeacher.html">首页</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.html">待回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredQuestion.html">已回答的问题</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a class="active"  href="filezoneT.html">文件大全</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0s"><a href="indexTeacher.jsp">首页</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="unanswered.jsp">待回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="answeredquestion.jsp">已回答的问题</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a class="active"  href="#">文件大全</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -170,7 +179,7 @@ table {
 </tr>
 </c:forEach></table>
  <p class="btn-link">
-  <a href="../index.jsp"> <button>我要上传</button></a>
+  <a href="index.jsp"> <button class="btn">我要上传</button></a>
       </p>
       </div>
  <div class="footer-area">

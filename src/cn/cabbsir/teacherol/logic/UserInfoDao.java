@@ -17,7 +17,7 @@ public class UserInfoDao {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
             //为了减少编译次数，要将变量换为?
-            st=conn.prepareStatement("select username,password,email,area,teachingarea,teachingage from teacher WHERE username LIKE ?");
+            st=conn.prepareStatement("select finishtimes,username,password,email,area,teachingarea,teachingage from teacher WHERE username LIKE ?");
             //SetType(No.,Values);
             st.setString(1,"%"+name+"%");
             //执行sql语句
@@ -29,6 +29,7 @@ public class UserInfoDao {
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
                 user.setArea(rs.getString("area"));
+                user.setFinishTimes(rs.getInt("finishtimes"));
                 user.setTeachingArea(rs.getString("teachingarea"));
             }
         } catch (ClassNotFoundException e) {
@@ -64,13 +65,14 @@ public class UserInfoDao {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn=DriverManager.getConnection("jdbc:oracle:thin:@10.25.243.155:1521:orcl","cabbsir","cabbsir");
             //为了减少编译次数，要将变量换为?
-            st=conn.prepareStatement("select username,password,email,area,grade from student WHERE username LIKE ?");
+            st=conn.prepareStatement("select submitimes,username,password,email,area,grade from student WHERE username LIKE ?");
             //SetType(No.,Values);
             st.setString(1,"%"+name+"%");
             //执行sql语句
             rs=st.executeQuery();
             if(rs.next()){
                 user=new UserInfo();
+                user.setSubTimes(rs.getInt("submitimes"));
                 user.setGrade(rs.getInt("grade"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
